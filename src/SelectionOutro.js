@@ -1,3 +1,5 @@
+import './glide.css'
+
 const SelectionOutro = ({choices, handleMultiSelect, proceed}) => {
   return (
     <div className="categoryBox cbxOutro">
@@ -7,7 +9,8 @@ const SelectionOutro = ({choices, handleMultiSelect, proceed}) => {
         {
           choices.map((categ)=>{
             return(
-              <div className='category' key={categ.id}>
+              <div className='category' id={`${categ.category}`+`_sel`}
+                key={categ.id}>
 
                 <input
                   name='categ_check'

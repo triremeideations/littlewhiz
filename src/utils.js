@@ -1,3 +1,5 @@
+import './intro.css'
+
 export function flight_mechanics(qPos, qbr, theQuib){
     console.log(`flying in from ${qPos}`);
     console.log(`flying out to ${qbr.quibbleAt}`);
@@ -13,7 +15,9 @@ export function flight_mechanics(qPos, qbr, theQuib){
 
 export function presentStart(){
     let targ = document.getElementsByClassName('cbxIntro')[0];
+    let focus = document.getElementsByClassName('cbxOutro')[0];
     targ.classList.add('fadeAway');
+    focus.classList.add('boldenIn');
 }
 
 export function proceed(){

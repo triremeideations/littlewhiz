@@ -1,13 +1,20 @@
+/* eslint-disable no-useless-concat*/
+
+import './glide.css'
+import './intro.css'
+
 const SelectionIntro = ({ categoryList, handleSingleSelect,
     presentStart}) => {
         return (
             <div className="categoryBox cbxIntro">
-                <p> Click for info! </p>
+                <h2> Click Pictures for info! </h2>
                 <div className="break"></div>
                 {
                 categoryList.map((categ)=>{
                     return(
-                    <div className='category' key={categ.id}>
+                        <div className='category'
+                        id={`${categ.category}`+`_desc`}
+                        key={categ.id}>
                         <input
                         name='categ_radio'
                         type='radio'

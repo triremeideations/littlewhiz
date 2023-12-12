@@ -1,0 +1,94 @@
+.category {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: transparent;
+    border-radius: 10%;
+}
+
+#verbal_desc,
+#verbal_sel {
+    background-image: url('/public/img/abc.jpg');
+}
+
+#numerical_desc,
+#numerical_sel {
+    background-image: url('/public/img/s123.jpg');
+}
+
+#logical_desc,
+#logical_sel {
+    background-image: url('/public/img/rubrics.jpg');
+    background-position: left;
+}
+
+#abstract_desc,
+#abstract_sel {
+    background-image: url('/public/img/abstract.jpg');
+}
+
+.quibbleMove {
+    width: 90px;
+    height: 100px;
+    /* border: 2px solid black; */
+  
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+  
+    animation-name: quibble;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.01s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+  }
+  
+  @keyframes quibble {
+    0% {
+      background-image: url('/public/img/stby_0.png');
+    }
+    20% {
+      background-image: url('/public/img/stby_1.png');
+    }
+    40% {
+      background-image: url('/public/img/stby_2.png');
+    }
+    60% {
+      background-image: url('/public/img/stby_3.png');
+    }
+    80% {
+      background-image: url('/public/img/stby_4.png');
+    }
+    100%{
+      background-image: url('/public/img/stby_5.png');
+    }
+  }
+  
+  @media only screen and (min-width: 1024px){
+    .quibbleMove {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  .quibbleBox {
+    width: 100%;
+    height: 50%;
+    /* background-color: red; */
+    order: 1;
+  }
+  
+  .quibbleMove{
+    position: relative;
+    left: 10%;
+    transition: left 1.5s ease-in, transform 1s ease;
+    
+    animation-duration: 1.2s;
+    animation-delay: 0.01s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+  }

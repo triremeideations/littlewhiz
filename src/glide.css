@@ -1,0 +1,95 @@
+.push {
+    background-color: yellow;
+    animation-name: glide_forward;
+  }
+  
+.pull {
+    background-color: royalblue;
+    animation-name: glide_backward;
+  }
+  
+  @keyframes glide_forward {
+    0%{
+      transform: rotateY(0) translateY(0%);
+    }
+    25%{
+      transform: rotateY(0) translateY(-20%);
+    }
+    50%{
+      transform: rotateY(0) translateY(0%);
+    }
+    75%{
+      transform: rotateY(0) translateY(20%);
+    }
+    100%{
+      transform: rotateY(0) translateY(0%);
+    }
+  }
+  
+  @keyframes glide_backward {
+    0%{
+      transform: rotateY(180deg) translateY(0%);
+  
+    }
+    25%{
+      transform: rotateY(180deg) translateY(-25%);
+    }
+    30%{
+      transform: rotateY(180deg) translateY(-45%);
+    }
+    35%{
+      transform: rotateY(180deg) translateY(-25%);
+    }
+    50%{
+      transform: rotateY(180deg) translateY(-30%);
+    }
+    75%{
+      transform: rotateY(180deg) translateY(40%);
+    }
+    100%{
+      transform: rotateY(180deg) translateY(0%);
+    }
+  }
+  
+  .fadeAway {
+    animation-name: fade_away;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 0.01s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fade_away {
+    from {
+      opacity: 1;
+      display: flex;
+    }
+    to{
+      opacity: 0;
+      display: none;
+    }
+  }
+  
+  .boldenIn {
+    animation-name: bolden_in;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 0.5s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes bolden_in {
+    from {
+      opacity: 0;
+      display: none;
+    }
+    to{
+      opacity: 1;
+      display: flex;
+    }
+  }
+  
