@@ -1,7 +1,7 @@
-import './styles2.css';
+import './selectionPage.css';
 import { useState } from 'react';
 import { quibblePos, categoryList } from './populateData';
-import { flight_mechanics, presentStart } from './utils';
+import { flight_mechanics, presentStart, proceed} from './utils';
 import SelectionIntro from './SelectionIntro';
 import SelectionOutro from './SelectionOutro';
 
@@ -39,6 +39,7 @@ function SelectionPage() {
       <SelectionOutro
         choices={choices}
         handleMultiSelect={handleMultiSelect}
+        proceed={proceed}
       />
 
       <SelectionIntro

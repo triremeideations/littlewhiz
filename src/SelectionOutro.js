@@ -1,6 +1,9 @@
-const SelectionOutro = ({choices, handleMultiSelect}) => {
+const SelectionOutro = ({choices, handleMultiSelect, proceed}) => {
   return (
     <div className="categoryBox cbxOutro">
+        <p>Choose your Categories</p>
+        <div className="break"></div>
+
         {
           choices.map((categ)=>{
             return(
@@ -19,7 +22,19 @@ const SelectionOutro = ({choices, handleMultiSelect}) => {
             )
           })
         }
-      </div>
+        {/* <div className="quibbleBox"> */}
+        <div className='quibbleSpeak speakTwo'>
+          <div className="qSay commend"></div>
+          <div className="qNext"
+            onClick={()=>{
+              proceed();
+            }}
+            >
+              <p>Let's Go Champ!</p>
+          </div>
+        </div>
+        {/* </div> */}
+    </div>
   )
 }
 

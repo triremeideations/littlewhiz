@@ -2,6 +2,8 @@ const SelectionIntro = ({ categoryList, handleSingleSelect,
     presentStart}) => {
         return (
             <div className="categoryBox cbxIntro">
+                <p> Click for info! </p>
+                <div className="break"></div>
                 {
                 categoryList.map((categ)=>{
                     return(
@@ -20,15 +22,17 @@ const SelectionIntro = ({ categoryList, handleSingleSelect,
                 })
                 }
                 <div className='quibbleBox'>
-                <div className='quibbleMove'></div>
-                <div className='quibbleSpeak'>
-                    <div className="qSay"></div>
-                    <div className="qNext"
-                    onClick={()=>{
-                    presentStart();
-                    }}
-                    >Got it!</div>
-                </div>
+                    <div className='quibbleMove'></div>
+                    <div className='quibbleSpeak'>
+                        <div className="qSay describe"></div>
+                        <div className="qNext"
+                        onClick={()=>{
+                        presentStart();
+                        }}
+                        >
+                            <p>Got it!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
   )

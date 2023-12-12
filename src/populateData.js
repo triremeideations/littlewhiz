@@ -43,3 +43,26 @@ export const categoryList = [
       active: false,
     }
   ]
+
+// const prompts = [
+//   {
+//     id: 'verbal',
+//     highlighted: '',
+//     selected: ''
+//   },
+//   {
+//     id: 'numerical',
+//     highlighted: '',
+//     selected: ''
+//   },
+//   {
+//     id: 'logical',
+//     highlighted: '',
+//     selected: ''
+//   },
+//   {
+//     id: 'abstract',
+//     highlighted: '',
+//     selected: ''
+//   },
+// ]

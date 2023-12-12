@@ -15,3 +15,7 @@ export function presentStart(){
     let targ = document.getElementsByClassName('cbxIntro')[0];
     targ.classList.add('fadeAway');
 }
+
+export function proceed(){
+    console.log('processing');
+}
