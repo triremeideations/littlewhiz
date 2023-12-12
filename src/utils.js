@@ -1,4 +1,4 @@
-import './intro.css'
+import './styles/intro.css'
 
 export function flight_mechanics(qPos, qbr, theQuib){
     console.log(`flying in from ${qPos}`);
@@ -12,6 +12,10 @@ export function flight_mechanics(qPos, qbr, theQuib){
         theQuib.classList.add('pull');
     }
 }
+
+// function knob_mechanics(){
+    
+// }
 
 export function presentStart(){
     let targ = document.getElementsByClassName('cbxIntro')[0];

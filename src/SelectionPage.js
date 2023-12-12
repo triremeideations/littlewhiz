@@ -1,4 +1,4 @@
-import './selectionPage.css';
+import './styles/selectionPage.css';
 import { useState } from 'react';
 import { quibblePos, categoryList } from './populateData';
 import { flight_mechanics, presentStart, proceed} from './utils';
@@ -16,14 +16,15 @@ function SelectionPage() {
     flight_mechanics(qPos, qbr, theQuib);
   }
 
-  const handleSingleSelect=(s)=>{
+  const handleSingleSelect=(s, e)=>{
     let pick = quibblePos.filter((f)=> f.topic === s);
     pick = pick[0];
     setQPos(pick.quibbleAt);
     handleQuibble(pick);
+    e.target.parentNode.classList.toggle('knob_shrink');
   }
 
-  const handleMultiSelect=(x)=>{
+  const handleMultiSelect=(x, e)=>{
     console.log(`choices: ${x}`);
     const chooseCategs = choices.map(
       (y)=> y.id === x
@@ -31,6 +32,10 @@ function SelectionPage() {
       : y
     );
     setChoices(chooseCategs);
+    e.target.parentNode.classList.add('frills');
+    setTimeout(() => {
+      e.target.parentNode.classList.add('show_tick');
+    }, 1500);
   }
 
   return (

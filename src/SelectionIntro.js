@@ -1,7 +1,9 @@
 /* eslint-disable no-useless-concat*/
 
-import './glide.css'
-import './intro.css'
+import './styles/glide.css'
+import './styles/intro.css'
+import { speaks } from './description';
+
 
 const SelectionIntro = ({ categoryList, handleSingleSelect,
     presentStart}) => {
@@ -12,15 +14,17 @@ const SelectionIntro = ({ categoryList, handleSingleSelect,
                 {
                 categoryList.map((categ)=>{
                     return(
-                        <div className='category'
+                        <div className='category sKnob'
                         id={`${categ.category}`+`_desc`}
                         key={categ.id}>
                         <input
                         name='categ_radio'
                         type='radio'
                         onChange={
-                            ()=>{
-                                handleSingleSelect(categ.category);
+                            (e)=>{
+                                handleSingleSelect(categ.category, e);
+                                console.log(e);
+                                speaks(e);
                             }
                         }>
                         </input>

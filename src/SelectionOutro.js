@@ -1,4 +1,6 @@
-import './glide.css'
+/* eslint-disable no-useless-concat*/
+
+import './styles/glide.css'
 
 const SelectionOutro = ({choices, handleMultiSelect, proceed}) => {
   return (
@@ -17,7 +19,7 @@ const SelectionOutro = ({choices, handleMultiSelect, proceed}) => {
                   type='checkbox'
                   checked={categ.active}
                   onChange={
-                    ()=>handleMultiSelect(categ.id)
+                    (e)=>handleMultiSelect(categ.id, e)
                   }>
                 </input>
 
