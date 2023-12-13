@@ -44,25 +44,25 @@ export const categoryList = [
     }
   ]
 
-// const prompts = [
-//   {
-//     id: 'verbal',
-//     highlighted: '',
-//     selected: ''
-//   },
-//   {
-//     id: 'numerical',
-//     highlighted: '',
-//     selected: ''
-//   },
-//   {
-//     id: 'logical',
-//     highlighted: '',
-//     selected: ''
-//   },
-//   {
-//     id: 'abstract',
-//     highlighted: '',
-//     selected: ''
-//   },
-// ]
+export const prompts = [
+  {
+    id: 'verbal',
+    highlighted: 'This helps us see how awesome you are with words and sentences!',
+    selected: 'Verbal reasoning'
+  },
+  {
+    id: 'numerical',
+    highlighted: 'This helps us see how great you are at playing with numbers and counting cool things!',
+    selected: 'Numerical reasoning'
+  },
+  {
+    id: 'logical',
+    highlighted: 'This helps us see how you use your super-smart thinking ability to solve tricky problems!',
+    selected: 'Logical reasoning'
+  },
+  {
+    id: 'abstract',
+    highlighted: 'Here we explore a magical world of shapes and patterns! How well can your clever imagination connect the dots?',
+    selected: 'Abstract reasoning'
+  },
+]

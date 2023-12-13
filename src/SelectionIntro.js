@@ -23,7 +23,6 @@ const SelectionIntro = ({ categoryList, handleSingleSelect,
                         onChange={
                             (e)=>{
                                 handleSingleSelect(categ.category, e);
-                                console.log(e);
                                 speaks(e);
                             }
                         }>
@@ -36,7 +35,7 @@ const SelectionIntro = ({ categoryList, handleSingleSelect,
                     <div className='quibbleMove'></div>
                     <div className='quibbleSpeak'>
                         <div className="qSay describe"></div>
-                        <div className="qNext"
+                        <div className="qNext void"
                         onClick={()=>{
                         presentStart();
                         }}

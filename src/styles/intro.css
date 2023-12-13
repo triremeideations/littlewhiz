@@ -76,7 +76,6 @@
   .quibbleBox {
     width: 100%;
     height: 50%;
-    /* background-color: red; */
     order: 1;
   }
   
@@ -92,3 +91,13 @@
     animation-fill-mode: forwards;
     animation-direction: normal;
   }
+
+.void {
+  opacity: 0;
+  pointer-events: none;
+}
+.diov {
+  transition: opacity 0.7s ease-in-out;
+  opacity: 1;
+  pointer-events: all;
+}

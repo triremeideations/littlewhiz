@@ -1,0 +1,19 @@
+.prepDiag {
+    position: absolute;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    background-color: var(--glassy);
+    left: 50%;
+    transform: scale(0) translateX(-50%);
+    border: 1px outset silver;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.visPrep {
+    transition: transform 0.7s ease-in-out;
+    transform: scale(1) translateX(-50%);
+}

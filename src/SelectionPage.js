@@ -4,6 +4,7 @@ import { quibblePos, categoryList } from './populateData';
 import { flight_mechanics, presentStart, proceed} from './utils';
 import SelectionIntro from './SelectionIntro';
 import SelectionOutro from './SelectionOutro';
+import PrepDialogBox from './PrepDialog';
 
 function SelectionPage() {
 
@@ -53,6 +54,7 @@ function SelectionPage() {
         presentStart={presentStart}
       />
 
+      <PrepDialogBox/>
     </div>
   );
 }
