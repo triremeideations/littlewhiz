@@ -45,7 +45,7 @@ const SelectionIntro = ({ categoryList, handleSingleSelect,
                     </div>
                 </div>
             </div>
-  )
-}
+        )
+    }
 
 export default SelectionIntro

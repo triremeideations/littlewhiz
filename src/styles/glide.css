@@ -62,11 +62,11 @@
   }
   
   @keyframes fade_away {
-    from {
+    0% {
       opacity: 1;
       display: flex;
     }
-    to {
+    100% {
       opacity: 0;
       display: none;
     }
@@ -83,13 +83,15 @@
   }
   
   @keyframes bolden_in {
-    from {
+    0% {
       opacity: 0;
       display: none;
     }
-    to{
+    100% {
       opacity: 1;
       display: flex;
+      
+      /* pointer-events: all; */
     }
   }
   
