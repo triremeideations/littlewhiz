@@ -11,6 +11,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 @media only screen and (max-width: 599px){
 .frame {
   background-image: url('/public/selBG_lo.png');
@@ -32,6 +33,7 @@
 
 .categoryBox {
   position: absolute;
+  top: 5%;
   width: 85%;
   min-width: 600px;
   max-height: 700px;
@@ -120,7 +122,6 @@
   grid-template-rows: 1fr;
   gap: 5px;
 }
-
 .speakTwo {
   top: 0;
   width: 70%;
@@ -174,5 +175,23 @@
 @media only screen and (max-width: 1023.98px){
   .proc {
     font-size: 70%;  
+  }
+}
+
+@media only screen and (max-width: 700px){
+  .categoryBox {
+    position: absolute;
+    top: 2%;
+    width: 85%;
+    min-width: 600px;
+    max-height: 700px;
+    height: 85%;
+    border: 1px inset silver;
+    border-radius: 5px;
+  
+    transform: scaleY(0.87);
+  }
+  .speakTwo {
+    top: -2%;
   }
 }
