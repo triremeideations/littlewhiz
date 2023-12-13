@@ -66,3 +66,9 @@ export const prompts = [
     selected: 'Abstract reasoning'
   },
 ]
+
+export const ideal=[
+  'Hey Champ! This screen is not wide enough to enjoy theLearner.',
+  'You could rotate the phone, sure...',
+  'But how about you use a computer instead?'
+];

@@ -7,6 +7,7 @@ import { speaks } from './description';
 
 const SelectionIntro = ({ categoryList, handleSingleSelect,
     presentStart}) => {
+
         return (
             <div className="categoryBox cbxIntro">
                 <h2> Click Pictures for info! </h2>

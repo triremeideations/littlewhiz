@@ -5,6 +5,7 @@ import { flight_mechanics, presentStart, proceed} from './utils';
 import SelectionIntro from './SelectionIntro';
 import SelectionOutro from './SelectionOutro';
 import PrepDialogBox from './PrepDialog';
+import ResolutionPrompt from './Resolution';
 
 function SelectionPage() {
 
@@ -41,7 +42,6 @@ function SelectionPage() {
 
   return (
     <div className='frame'>
-
       <SelectionOutro
         choices={choices}
         handleMultiSelect={handleMultiSelect}
@@ -55,6 +55,7 @@ function SelectionPage() {
       />
 
       <PrepDialogBox/>
+      <ResolutionPrompt/>
     </div>
   );
 }
