@@ -19,4 +19,5 @@
     transition: transform 0.7s ease-in-out;
     transform: scale(1) translateX(-50%);
     pointer-events: all;
+    z-index: 3;
 }
