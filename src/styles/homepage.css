@@ -132,7 +132,7 @@
 
     background-image: url('/public/img/stby_0.png');
     animation-name: quibbleIMG;
-    animation-duration: 0.6s;
+    animation-duration: 1.2s;
     animation-timing-function: ease;
     animation-delay: 0.01s;
     animation-iteration-count: infinite;
