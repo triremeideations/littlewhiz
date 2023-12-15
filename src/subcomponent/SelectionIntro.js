@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-concat*/
 
-import './styles/glide.css'
-import './styles/intro.css'
-import { speaks } from './description';
+import '../styles/glide.css'
+import '../styles/intro.css'
+import { speaks } from '../utils/description';
 
 
 const SelectionIntro = ({ categoryList, handleSingleSelect,

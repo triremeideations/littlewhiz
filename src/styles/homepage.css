@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    --frame_height: 600px;
+    --bg_theme: greenyellow;
+    --glass: #c0c0c015;
+    --content_origin: 200px;
+    --content_height: 2000px;
+    --ctn_box_height: 400px;
+    --skyfall: linear-gradient(rgb(7, 65, 238), rgb(0, 102, 255) 10%,rgb(0, 179, 255), pink);
+}
+
+*::-webkit-scrollbar{
+    width: 0;
+}
+
+.wait {
+    position: relative;
+    position: absolute;
+    top: 0;
+    /* width: 100%;
+    height: 100%; */
+    background-color: indigo;
+    z-index: 4;
+    /* pointer-events: none; */
+    /* float: right; */
+}
+.nullify{
+    pointer-events: none;
+}
+
+.master_frame {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    min-height: var(--frame_height);
+    height: var(--frame_height);
+    max-height: var(--frame_height);
+    /* background-color: forestgreen; */
+    background: var(--skyfall);
+    pointer-events: none;
+}
+
+.cs_item {
+    min-height: 70px;
+    min-width: 150px;
+    /* border: 2px solid brown; */
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    will-change: transform;
+}
+.cs_0 {
+    top: 7%;
+    left: 15%;
+    height: 9.3rem;
+    width: 15rem;
+}
+.cs_1 {
+    top: 38%;
+    right: 15%;
+    width: 12rem;
+    height: 100px;
+    z-index: 2;
+}
+.cs_2 {
+    width: 50vw;
+    height: 180px;
+    top: 20%;
+    left: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.8rem;
+}
+
+.cs_0, .cs_1 {
+    background-image: url('/public/img/cloud.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+@media only screen and (max-width: 700px){
+    .cs_2 {
+        width: 50vw;
+        font-size: 2.65rem;
+        height: 150px;
+    }
+}
+/*cascade order*/
+@media only screen and (max-width: 400px){
+    .cs_2 {
+        width: 60vw;
+        left: 20%;
+        font-size: 3rem;
+        height: 150px;
+    }
+}
+
+.cs_3 {
+    top: 80%;
+    width: 40%;
+    height: 100px;
+}
+
+.container{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* border: 2px solid red; */
+}
+
+.scroll_1 {
+    position: fixed;
+    top: 350px;
+    left: 5%;
+    z-index: 99;
+
+    width: 120px;
+    height: 150px;
+    transition: 
+        background-image 0.5s ease-in-out,
+        background-color 0.5s ease-in-out,
+        left 0.5s ease,
+        top 0.8s ease-in-out,
+        transform 0.5s ease;
+    /* background-color: rebeccapurple; */
+    color: white;
+    color: transparent;
+
+    background-image: url('/public/img/stby_0.png');
+    animation-name: quibbleIMG;
+    animation-duration: 0.6s;
+    animation-timing-function: ease;
+    animation-delay: 0.01s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+
+@keyframes quibbleIMG {
+    0%{
+        background-image: url('/public/img/stby_0.png');
+    }
+    20%{
+        background-image: url('/public/img/stby_1.png');
+    }
+    40%{
+        background-image: url('/public/img/stby_2.png');
+    }
+    60%{
+        background-image: url('/public/img/stby_3.png');
+    }
+    80%{
+        background-image: url('/public/img/stby_4.png');
+    }
+    100%{
+        background-image: url('/public/img/stby_5.png');
+    }
+    
+}
+
+.content {
+    
+    position: relative;
+    height: var(--content_height);
+    background-color: pink;
+    pointer-events: none;
+    /* backdrop-filter: blur('2px'); */
+}
+
+.ctn_box {
+    position: absolute;
+    top: 0;
+    width: 350px;
+    height: var(--ctn_box_height);
+    background-color: aqua;
+}
+
+.ctn_0 {
+    top: var(--content_origin);
+    left: 10px;
+}
+
+.ctn_1 {
+    top: calc(4 * var(--content_origin));
+    right: 10px;
+}
+.ctn_2 {
+    top: calc(6.5 * var(--content_origin));
+    left: 10px;
+}
+
+@media only screen and (min-width: 1100px){
+    .cs_1{
+        width: 17rem;
+        height: 10rem;
+        right: 30%;
+    }
+
+    .ctn_box {
+        width: 450px;
+    }
+    .ctn_0 {
+        top: var(--content_origin);
+        left: 100px;
+    }
+    .ctn_1 {
+        top: calc(3.5 * var(--content_origin));
+        width: 500px;
+        right: 100px;
+    }
+    .ctn_2 {
+        top: calc(6.5 * var(--content_origin));
+        left: 200px;
+    }
+}
+
+
+.extra {
+    position: absolute;
+    top: 2350px;
+    width: 90vw;
+    left: 5vw;
+    height: 200px;
+    background-color: red;
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+}

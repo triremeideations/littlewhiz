@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-concat*/
 
-import './styles/glide.css'
-import { goes } from './description'
+import '../styles/glide.css'
+import { goes } from '../utils/description'
 
 const SelectionOutro = ({choices, handleMultiSelect, proceed}) => {
   return (

@@ -1,11 +1,11 @@
 import './styles/selectionPage.css';
 import { useState } from 'react';
-import { quibblePos, categoryList } from './populateData';
-import { flight_mechanics, presentStart, proceed} from './utils';
-import SelectionIntro from './SelectionIntro';
-import SelectionOutro from './SelectionOutro';
-import PrepDialogBox from './PrepDialog';
-import ResolutionPrompt from './Resolution';
+import { quibblePos, categoryList } from './data/populateData';
+import { flight_mechanics, presentStart, proceed} from './utils/utils';
+import SelectionIntro from './subcomponent/SelectionIntro';
+import SelectionOutro from './subcomponent/SelectionOutro';
+import PrepDialogBox from './subcomponent/PrepDialog';
+import ResolutionPrompt from './subcomponent/Resolution';
 
 function SelectionPage() {
 

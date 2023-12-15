@@ -1,4 +1,4 @@
-import './styles/prepDialog.css'
+import '../styles/prepDialog.css'
 
 const PrepDialogBox = () => {
   return (

@@ -1,5 +1,5 @@
-import './styles/res.css'
-import { ideal } from './populateData'
+import '../styles/res.css'
+import { ideal } from '../data/populateData'
 
 const ResolutionPrompt =()=> {
     return (

@@ -1,4 +1,4 @@
-import './styles/intro.css'
+import '../styles/intro.css'
 
 export function flight_mechanics(qPos, qbr, theQuib){
     // console.log(`flying in from ${qPos}`);

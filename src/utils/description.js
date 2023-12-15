@@ -1,4 +1,4 @@
-import { prompts } from "./populateData";
+import { prompts } from "../data/populateData";
 
 export function speaks(e){
     let qSay = document.querySelector('.qSay.describe');
