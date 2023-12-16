@@ -1,4 +1,5 @@
 import '../styles/intro.css'
+import { Link } from 'react-router-dom';
 
 export function flight_mechanics(qPos, qbr, theQuib){
     // console.log(`flying in from ${qPos}`);
@@ -38,6 +39,7 @@ export function proceed(){
                 <br><br>
                 Happy Qwhizzing!
                 `;
+                <Link to='/ready'>Here is more</Link>
             diagx.classList.add('visPrep');
         }        
     } catch (e) {
