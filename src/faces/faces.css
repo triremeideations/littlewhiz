@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'nunito';
+    src: url('./nunito-regular.woff');
+}
+
+@font-face {
+    font-family: 'openscript';
+    src: url('./openscript.woff');
+}
+
+@font-face {
+    font-family: 'smartpeople';
+    src: url('./smartpeople.woff');
+}
+
+@font-face {
+    font-family: refbeverage;
+    src: url('./refbeverage.woff');
+}

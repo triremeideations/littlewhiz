@@ -40,8 +40,17 @@
     max-height: var(--frame_height);
     background: var(--skyfall);
     pointer-events: none;
+    font-family: 'nunito';
 }
-
+.smarty {
+    font-family: 'smartpeople', Helvetica, sans-serif;
+    font-weight: bold;
+}
+.sub_smarty {
+    font-family: 'refbeverage', Helvetica, sans-serif;
+    text-shadow: 2px 2px 2px gray;
+    font-weight: bold;
+}
 .cs_item {
     position: absolute;
     min-height: 70px;
@@ -139,8 +148,7 @@
         left 0.5s ease,
         top 0.8s ease-in-out,
         transform 0.5s ease;
-    color: white;
-    /* color: transparent; */
+    color: transparent;
 
     background-image: url('/public/img/stby_0.png');
 }

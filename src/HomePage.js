@@ -1,14 +1,14 @@
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './styles/hometemp.css'
-// import homework from './utils/home';
+import homework from './utils/home';
 
 function HomePage(){
 
-    // useEffect(()=>{
-    //     homework();
-    // }, []);
+    useEffect(()=>{
+        homework();
+    }, []);
 
     const navigate = useNavigate();
     const goToCategory =()=>{
@@ -21,10 +21,10 @@ function HomePage(){
                 <div className="cs_item cs_0"></div>
                 <div className="cs_item cs_1"></div>
                 <div className="cs_item cs_2">
-                    <p>LittleWhiz Learners</p>
+                    <p className='smarty'>LittleWhiz Learners</p>
                 </div>
                 <div className='cs_item cs_x'>
-                    <p>
+                    <p className='sub_smarty'>
                         An e-learning platform designed for children, ages 5-7
                     </p>
                 </div>

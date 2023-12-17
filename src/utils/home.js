@@ -27,6 +27,11 @@ export default function homework(){
                 `
                 translateY(${scrollPos * 0.6}px)
                 `;
+                document.getElementsByClassName('cs_x')[0].
+                style.transform = 
+                `
+                translateY(${scrollPos * 0.6}px)
+                `;
                 
                 document.getElementsByClassName('cs_3')[0].
                 style.transform = 
