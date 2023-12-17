@@ -36,6 +36,7 @@
   top: 5%;
   width: 85%;
   min-width: 600px;
+  max-width: 1160px;
   max-height: 700px;
   height: 85%;
   border: 1px inset silver;
