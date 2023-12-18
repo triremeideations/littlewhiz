@@ -1,3 +1,5 @@
+/* eslint-disable dot-location */
+
 export default function tribb (quibble, extra){
 try{
     const scrollPos = window.scrollY;
