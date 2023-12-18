@@ -60,33 +60,68 @@ try{
     // }
     // else quibble.style.backgroundColor = 'rebeccapurple';
     
-    if (content_start < 110){
+    if (content_start <= -250 ){
+        quibble.classList.add('scr_active');
+        restQuibble();
+        quibble.classList.add('scr_active');
         quibble.style.transform='rotateZ(0deg)';
-        quibble.style.left='5%';
-        quibble.style.top='350px';
     }
+    
+    if (content_start > -250){
+        quibble.classList.remove('scr_active');
+        quibble.classList.add('perch');
+        restQuibble();
+        quibble.classList.add('perch');
+    }
+
     if (content_start >= 110){
         quibble.style.transform='rotateZ(-25deg)';
+        quibble.style.left='5%';
+        quibble.style.top='350px';
+        quibble.classList.add('hover');
+        restQuibble();
+        quibble.classList.add('hover');
     }
     
     if (content_start >= 200){
         quibble.style.left = '50%';
         quibble.style.transform='rotateZ(45deg)';
+        quibble.classList.add('glance');
+        restQuibble();
+        quibble.classList.add('glance');
     }
     if (content_start >= 270){
         quibble.style.left = '50%';
         quibble.style.top='100px';
         quibble.style.transform='rotateZ(-5deg)';
     }
+    if (content_start >= 800){
+        quibble.classList.add('hover');
+        restQuibble();
+        quibble.classList.add('hover');
+    }
     if (content_start >= 950){
         quibble.style.transform='rotateZ(15deg)';
         quibble.style.left = '10%';
         quibble.style.top='300px';
+        quibble.classList.add('hover');
+        restQuibble();
+        quibble.classList.add('hover');
     }
     if (content_start >= 1440){
         quibble.style.transform='rotateZ(-15deg)';
         quibble.style.left = '70%';
         quibble.style.top='70px';
+        quibble.classList.add('glance');
+        restQuibble();
+        quibble.classList.add('glance');
+    }
+
+    function restQuibble(){
+        quibble.classList.remove('scr_active');
+        quibble.classList.remove('perch');
+        quibble.classList.remove('hover');
+        quibble.classList.remove('glance');
     }
 
     function boxpop(){

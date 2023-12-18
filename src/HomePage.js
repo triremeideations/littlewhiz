@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './styles/hometemp.css'
+import './styles/quibbleModes.css'
 import homework from './utils/home';
 
 function HomePage(){

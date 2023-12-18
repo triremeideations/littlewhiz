@@ -1,0 +1,97 @@
+/* quibble states*/
+
+.perch {
+    animation-name: quibblePerch;
+    animation-duration: 1s;
+    animation-delay: 0.01s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+    animation-direction: alternate-reverse;
+  }
+
+  @keyframes quibblePerch {
+    0%{
+        background-image: url('/public/img/flt_0.png');
+    }
+    20%{
+        background-image: url('/public/img/flt_1.png');
+    }
+    40%{
+        background-image: url('/public/img/flt_2.png');
+    }
+    60%{
+        background-image: url('/public/img/flt_3.png');
+    }
+    80%{
+        background-image: url('/public/img/flt_4.png');
+    }
+    100%{
+        background-image: url('/public/img/flt_5.png');
+    }
+    
+}
+
+.hover {
+    animation-name: quibbleHover;
+    animation-duration: 0.7s;
+    animation-delay: 0.01s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate-reverse;
+  }
+
+  @keyframes quibbleHover {
+    0%{
+        background-image: url('/public/img/hov_0.png');
+    }
+    20%{
+        background-image: url('/public/img/hov_1.png');
+    }
+    40%{
+        background-image: url('/public/img/hov_2.png');
+    }
+    60%{
+        background-image: url('/public/img/hov_3.png');
+    }
+    80%{
+        background-image: url('/public/img/hov_4.png');
+    }
+    100%{
+        background-image: url('/public/img/hov_5.png');
+    }
+    
+}
+
+.glance {
+    animation-name: quibbleGlance;
+    animation-duration: 0.7s;
+    animation-delay: 0.01s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate-reverse;
+  }
+
+  @keyframes quibbleGlance {
+    0%{
+        background-image: url('/public/img/alt_0.png');
+    }
+    20%{
+        background-image: url('/public/img/alt_1.png');
+    }
+    40%{
+        background-image: url('/public/img/alt_2.png');
+    }
+    60%{
+        background-image: url('/public/img/alt_3.png');
+    }
+    80%{
+        background-image: url('/public/img/alt_4.png');
+    }
+    100%{
+        background-image: url('/public/img/alt_5.png');
+    }
+    
+}
