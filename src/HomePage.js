@@ -23,10 +23,12 @@ function HomePage(){
                 <div className="cs_item cs_0"></div>
                 <div className="cs_item cs_1"></div>
                 <div className="cs_item cs_2">
-                    <p className='smarty'>LittleWhiz Learners</p>
+                    <p className='smarty pants'>
+                        LittleWhiz Learners
+                    </p>
                 </div>
                 <div className='cs_item cs_x'>
-                    <p className='sub_smarty'>
+                    <p className='sub_smarty pants'>
                         An e-learning platform designed for children, ages 5-7
                     </p>
                 </div>
