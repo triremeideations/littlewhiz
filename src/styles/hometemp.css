@@ -26,7 +26,8 @@
         linear-gradient(
             pink,
             rgb(0, 179, 255) 20%,
-            black 70%
+            wheat 70%,
+            black
         );
 
 }
