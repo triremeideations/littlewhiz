@@ -25,9 +25,11 @@ export function presentStart(){
 }
 
 export function proceed(){
+    /* C.f. selectionOutro subcomponent */
     console.log('processing');
     let qmenu = JSON.parse(sessionStorage.getItem('qmenu'));
     let diagx = document.querySelectorAll('.prepDiag')[0];
+    let diagBtn = document.querySelectorAll('.initiateQuiz')[0];
     // console.log(qmenu.length);
     let question_count = 2;
 
@@ -43,6 +45,7 @@ export function proceed(){
                 Happy Qwhizzing!
                 `;
             diagx.classList.add('visPrep');
+            diagBtn.classList.add('visPrep');
         }        
     } catch (e) {
         alert('Make a selection, champ!');

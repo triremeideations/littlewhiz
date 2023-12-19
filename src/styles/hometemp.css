@@ -21,12 +21,6 @@
         );
 }
 
-/* .gradic {
-    height: 650px;
-    width: 100%;
-    background-color: red;
-} */
-
 *::-webkit-scrollbar{
     width: 0;
 }
