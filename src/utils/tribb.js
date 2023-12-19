@@ -62,7 +62,7 @@ try{
     // }
     // else quibble.style.backgroundColor = 'rebeccapurple';
     
-    if (content_start <= -250 ){
+    if (content_start === -250 ){
         quibble.classList.add('scr_active');
         restQuibble();
         quibble.classList.add('scr_active');
@@ -70,9 +70,12 @@ try{
     }
     
     if (content_start > -250){
-        quibble.classList.remove('scr_active');
         quibble.classList.add('perch');
+        quibble.classList.remove('scr_active');
         restQuibble();
+        quibble.classList.add('perch');
+    }
+    if (content_start > -230){
         quibble.classList.add('perch');
     }
 

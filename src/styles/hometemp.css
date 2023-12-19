@@ -111,10 +111,10 @@
     }
     .cs_2 {
         left: 20%;
-        top: 17%;
+        top: 12%;
     }
     .cs_2 p{
-        font-size: 4.3rem;
+        font-size: 4rem;
     }
     .cs_x {
         top: 33%;
@@ -148,7 +148,7 @@
         left 0.5s ease,
         top 0.8s ease-in-out,
         transform 0.5s ease;
-    color: transparent;
+    /* color: transparent; */
 
     background-image: url('/public/img/stby_0.png');
 }
