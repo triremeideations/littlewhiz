@@ -1,10 +1,10 @@
 import '../styles/intro.css'
-import { Link } from 'react-router-dom';
 
 export function flight_mechanics(qPos, qbr, theQuib){
-    // console.log(`flying in from ${qPos}`);
-    // console.log(`flying out to ${qbr.quibbleAt}`);
-
+    
+    /*  glide.css imported at selectionIntro.js
+    for push and pull */
+    
     if(qbr.quibbleAt > qPos){
         theQuib.classList.add('push');
         theQuib.classList.remove('pull');
@@ -13,6 +13,8 @@ export function flight_mechanics(qPos, qbr, theQuib){
         theQuib.classList.remove('push');
         theQuib.classList.add('pull');
     }
+    // console.log(`flying in from ${qPos}`);
+    // console.log(`flying out to ${qbr.quibbleAt}`);
 }
 
 export function presentStart(){
@@ -40,15 +42,10 @@ export function proceed(){
                 <br><br>
                 Happy Qwhizzing!
                 `;
-                <Link to='/ready'>Here is more</Link>
             diagx.classList.add('visPrep');
         }        
     } catch (e) {
         alert('Make a selection, champ!');
         console.log(e);
     }
-
-    // localStorage.setItem('wombat', qmenu);
-    // sessionStorage.clear();
-    // console.log(typeof(localStorage.getItem('wombat')));
 }

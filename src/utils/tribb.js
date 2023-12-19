@@ -55,12 +55,6 @@ try{
         shown on ${display_height}
         with content at ${content_start}
     `;
-
-    // if (content_start >= 0){
-        // quibble.style.backgroundColor = 'red';
-        //add image animation here
-    // }
-    // else quibble.style.backgroundColor = 'rebeccapurple';
     
     if (content_start === -250 ){
         quibble.classList.add('scr_active');
@@ -83,7 +77,6 @@ try{
         quibble.style.transform='rotateZ(-25deg)';
         quibble.style.left='5%';
         quibble.style.top='350px';
-        quibble.classList.add('hover');
         restQuibble();
         quibble.classList.add('hover');
     }
@@ -91,7 +84,6 @@ try{
     if (content_start >= 200){
         quibble.style.left = '50%';
         quibble.style.transform='rotateZ(45deg)';
-        quibble.classList.add('glance');
         restQuibble();
         quibble.classList.add('glance');
     }
