@@ -10,7 +10,7 @@ export function speaks(e){
     qSay.innerHTML = `${notice[0].highlighted}`
     setTimeout(() => {
         qNext.classList.add('diov');
-    }, 10000);
+    }, 7000);
 }
 
 export function goes(e){

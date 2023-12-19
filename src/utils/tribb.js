@@ -3,6 +3,9 @@
 export default function tribb (quibble, extra){
 try{
     const scrollPos = window.scrollY;
+    const target0 = document.getElementsByClassName('ctn_0')[0];
+    const target1 = document.getElementsByClassName('ctn_1')[0];
+    const target2 = document.getElementsByClassName('ctn_2')[0];
     
     //parallax fx
     document.getElementsByClassName('cs_0')[0].
@@ -57,6 +60,9 @@ try{
     `;
     
     if (content_start === -250 ){
+        if (sessionStorage.getItem('flight') === 'reached'){
+            window.location.reload();
+        }
         quibble.classList.add('scr_active');
         restQuibble();
         quibble.classList.add('scr_active');
@@ -72,13 +78,16 @@ try{
     if (content_start > -230){
         quibble.classList.add('perch');
     }
-
+    if (content_start < 90) {
+        hideTargets();
+    }
     if (content_start >= 110){
         quibble.style.transform='rotateZ(-25deg)';
         quibble.style.left='5%';
         quibble.style.top='350px';
         restQuibble();
         quibble.classList.add('hover');
+        target0.classList.add('targetUp');
     }
     
     if (content_start >= 200){
@@ -96,6 +105,7 @@ try{
         quibble.classList.add('hover');
         restQuibble();
         quibble.classList.add('hover');
+        target1.classList.add('targetSwish');
     }
     if (content_start >= 950){
         quibble.style.transform='rotateZ(15deg)';
@@ -104,6 +114,9 @@ try{
         quibble.classList.add('hover');
         restQuibble();
         quibble.classList.add('hover');
+    }
+    if (content_start >= 1200){
+        target2.classList.add('targetPop');
     }
     if (content_start >= 1440){
         quibble.style.transform='rotateZ(-15deg)';
@@ -120,10 +133,16 @@ try{
         quibble.classList.remove('hover');
         quibble.classList.remove('glance');
     }
+    function hideTargets(){
+        target0.classList.remove('targetUp');
+        target1.classList.remove('targetSwish');
+        target2.classList.remove('targetPop');
+    }
 
     function boxpop(){
         if (content_start >= 1490){
             extra.style.transform='scale(1)';
+            sessionStorage.setItem('flight','reached');
         }
         else if(content_start < 1490){
             extra.style.transform='scale(0)';
