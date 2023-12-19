@@ -45,7 +45,9 @@ export function proceed(){
                 Happy Qwhizzing!
                 `;
             diagx.classList.add('visPrep');
-            diagBtn.classList.add('visPrep');
+            setTimeout(() => {
+                diagBtn.classList.add('btnPrep');
+            }, 700);
         }        
     } catch (e) {
         alert('Make a selection, champ!');
