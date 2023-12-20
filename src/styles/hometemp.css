@@ -25,9 +25,14 @@
     --landFall:
         linear-gradient(
             pink,
-            rgb(0, 179, 255) 20%,
-            wheat 70%,
+            /* rgb(0, 179, 255) 30%, */
+            #a6db34 20%,
+            #67b3e6,
+            #dda39d 80%,
+            #9b59b6,
             black
+            /* pink 80%, */
+            /* black */
         );
 
 }

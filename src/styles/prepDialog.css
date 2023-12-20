@@ -29,7 +29,7 @@
 .initiateQuiz {
     position: absolute;
     left: 45%;
-    top: 300px;
+    top: 400px;
     width: 100px; height: 50px;
     background-color: black;
     color: white;
@@ -42,6 +42,11 @@
 
     opacity: 0;
     pointer-events: none;
+}
+@media only screen and (max-width: 749px){
+    .initiateQuiz {
+        top: 300px;
+    }
 }
 .initiateQuiz:active {
     transform: translateY(4px);
