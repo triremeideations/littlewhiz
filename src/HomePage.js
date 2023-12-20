@@ -39,16 +39,44 @@ function HomePage(){
                 ></div>
             </div>
             <div className="content">
-                <div className="ctn_box ctn_0"></div>
-                <div className="ctn_box ctn_1"></div>
-                <div className="ctn_box ctn_2"></div>
+                <div className="ctn_box ctn_0">
+                    <p>
+                        Welcome to LittleWhiz Learners, where every flutter of curiosity takes flight<i>!</i>
+                        <br></br>
+                        <br></br>
+                        Meet Quibble, the Mechanical Owl... Your wise companion on this journey of discovery.</p>
+                </div>
+                <div className="ctn_box ctn_1">
+                    <p>
+                        Kids, immerse yourselves in interactive lessons that make learning a magical experience.
+                        <br></br>
+                        <br></br>
+                        Watch your skills soar with each engaging activity.
+                        From numbers to words and pictures, LittleWhiz learners offers a world of wonder.
+                    </p>
+                </div>
+                <div className="ctn_box ctn_2">
+                    <p>
+                        Unlock the joy of learning. At theLearner, we believe that every tiny step is a leap toward a greater future.
+                        <br></br>
+                        
+                    </p>
+                </div>
             </div>
             
             <div
                 className="extra"
                 onClick={goToCategory}
             >
-                <p>Click to see more</p>
+                <p>
+                    And you know the best part?
+                    <br></br> 
+                    It's totally FREE!!!
+                    <br></br>
+                    So what are you waiting for?!
+                    <br></br>
+                    Click Here To Join IN Now!
+                </p>
             </div>
         </div>
     )

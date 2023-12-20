@@ -14,6 +14,21 @@
 }
 
 @font-face {
-    font-family: refbeverage;
+    font-family: 'refbeverage';
     src: url('./refbeverage.woff');
+}
+
+@font-face {
+    font-family: 'belligerent';
+    src: url('./belligerentmadness.woff');
+}
+
+@font-face {
+    font-family: 'eraser';
+    src: url('./eraser-regular.woff');
+}
+
+@font-face {
+    font-family: 'digital';
+    src: url('./digitalitalic.woff');
 }
