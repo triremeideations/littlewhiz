@@ -274,6 +274,9 @@
     left: 10px;
     transform-origin: bottom;
     transform: rotateX(45deg);
+    
+    -webkit-transform-origin: bottom;
+    -webkit-transform: rotateX(45deg);
 }
 .targetUp {
     transform: rotateX(0);
@@ -292,6 +295,8 @@
     right: 10px;
     transform-origin: left;
     transform: rotateY(60deg);
+    -webkit-transform-origin: left;
+    -webkit-transform: rotateY(60deg);
 }
 .targetSwish {
     transform: rotateY(0);
