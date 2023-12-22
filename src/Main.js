@@ -11,6 +11,7 @@ const App=()=>{
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/category" element={<SelectionPage/>}/>
                 <Route path="/ready" element={<BeginQuizzes/>}/>
+                <Route path="*" element={<HomePage/>}/>
             </Routes>
         </BrowserRouter>
     );
