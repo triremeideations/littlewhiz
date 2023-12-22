@@ -9,7 +9,7 @@ function HomePage(){
 
     useEffect(()=>{
         homework();
-    }, []);
+    });
 
     const navigate = useNavigate();
     const goToCategory =()=>{
