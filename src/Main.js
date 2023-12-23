@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
-import HomePage from './HomePage';
-import SelectionPage from './SelectionPage';
-import BeginQuizzes from './QuizPage';
+import HomePage from './component/HomePage';
+import SelectionPage from './component/SelectionPage';
+import BeginQuizzes from './component/QuizPage';
 
 
 const App=()=>{
