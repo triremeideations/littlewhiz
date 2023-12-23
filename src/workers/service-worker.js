@@ -5,7 +5,7 @@ self.addEventListener('install',(e)=>{
         .then(
             (cache) => {
                 return fetch('./manif.json')
-                .then(resp => resp,json())
+                .then(resp => resp.json())
                 .then(staticPaths => cache.addAll(staticPaths));
             }
         )
