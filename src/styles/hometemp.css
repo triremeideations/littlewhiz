@@ -258,6 +258,17 @@
     
     transition: transform 1s ease-in-out, opacity 2s ease;
     box-sizing: border-box;
+
+    /*fix janky animations on that excuse of a browser called safari*/
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform: translate3d(0,0,0);
+    will-change: transform, opacity;
+    /*add for good measure*/
+    -moz-backface-visibility: hidden; 
+    -moz-transform-style: preserve-3d;
 }
 
 .ctn_box p {
