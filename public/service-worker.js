@@ -16,8 +16,8 @@ const statCache = 'static-assets-v1';
 self.addEventListener('install',(e)=>{
     e.waitUntil(
         caches.open(statCache)
-        .then(
-            cache.addAll([
+        .then((c) => {
+            return c.addAll([
                 "/public/img/stdby_0.png",
                 "/public/img/stdby_1.png",
                 "/public/img/stdby_2.png",
@@ -42,11 +42,11 @@ self.addEventListener('install',(e)=>{
                 "/public/img/alt_3.png",
                 "/public/img/alt_4.png",
                 "/public/img/alt_5.png"
-            ])
+            ]);
+        }
         ))
     }
 );
-
 
 self.addEventListener('activate', (ev)=>{
     ev.waitUntil(self.clients.claim());
