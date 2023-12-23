@@ -1,34 +1,41 @@
 @font-face {
     font-family: 'nunito';
     src: url('./nunito-regular.woff');
+    font-display: fallback;
 }
 
 @font-face {
     font-family: 'openscript';
     src: url('./openscript.woff');
+    font-display: fallback;
 }
 
 @font-face {
     font-family: 'smartpeople';
     src: url('./smartpeople.woff');
+    font-display: fallback;
 }
 
 @font-face {
     font-family: 'refbeverage';
     src: url('./refbeverage.woff');
+    font-display: fallback;
 }
 
 @font-face {
     font-family: 'belligerent';
     src: url('./belligerentmadness.woff');
+    font-display: fallback;
 }
 
 @font-face {
     font-family: 'eraser';
     src: url('./eraser-regular.woff');
+    font-display: fallback;
 }
 
 @font-face {
     font-family: 'digital';
     src: url('./digitalitalic.woff');
+    font-display: fallback;
 }
