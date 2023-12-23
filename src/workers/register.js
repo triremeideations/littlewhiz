@@ -1,3 +1,5 @@
+/* eslint disable no-restricted-globals */
+
 const sw=()=>{
     const statCache = 'static-assets-v1';
     self.addEventListener('install',(e)=>{
@@ -34,7 +36,7 @@ const sw=()=>{
 export function registerSW (){
     if ('serviceWorker' in navigator) {
         window.addEventListener('load',()=>{
-            navigator.serviceWorker.register('./service-worker.js')
+            navigator.serviceWorker.register(sw)
             .then(
                 registration => {
                     console.log('SW registered with scope:', registration.scope);
