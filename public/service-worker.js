@@ -3,17 +3,22 @@ self.addEventListener('install',(e)=>{
     e.waitUntil(
         caches.open(statCache)
         .then(
-            (cache) => {
+            (cch) => {
                 return fetch('./asset-manifest.json')
-                .then((resp) => extractPaths(resp))
-                .then((staticPaths) => cache.addAll(staticPaths));
+                .then(resp => resp.json())
+                .then((resp)=>{
+                    const staticPaths = extractPaths(resp);
+                    cch.addAll(staticPaths);
+                }
+                )
+                // .then(cch.addAll(staticPaths));
             }
         )
     );
 });
 
-function extractPaths(resp){
-    const staticPaths = Object.values(resp.files);
+function extractPaths(x){
+    const staticPaths = Object.values(x.files);
     return staticPaths;
 }
 
