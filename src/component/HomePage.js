@@ -19,6 +19,7 @@ function HomePage(){
 
     return(
         <div className='gradic'>
+            <div className='sideImg'>What is going on?</div>
             <div className="master_frame">
                 <div className="cs_item cs_0"></div>
                 <div className="cs_item cs_1"></div>
@@ -38,6 +39,7 @@ function HomePage(){
                     "container scroll_1 scr_active"
                 ></div>
             </div>
+
             <div className="content">
                 <div className="ctn_box ctn_0">
                     <p>

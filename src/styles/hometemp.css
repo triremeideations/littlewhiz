@@ -244,6 +244,14 @@
 
     perspective: 500px;
 }
+.sideImg{
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 99;
+}
 
 .ctn_box {
     position: absolute;
