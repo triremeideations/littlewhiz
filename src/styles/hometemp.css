@@ -283,7 +283,8 @@
 }
 @media only screen and (max-width: 540px){
     .ctn_box p{
-        line-height: 1;
+        line-height: 1.1;
+        font-size: 125%;
     }
 }
 

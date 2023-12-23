@@ -57,7 +57,7 @@ function HomePage(){
                 </div>
                 <div className="ctn_box ctn_2">
                     <p>
-                        Unlock the joy of learning. At theLearner, we believe that every tiny step is a leap toward a greater future.
+                        Unlock the joy of learning. Here at theLearner, we believe that every tiny step is a leap toward a greater future.
                         <br></br>
                         
                     </p>
