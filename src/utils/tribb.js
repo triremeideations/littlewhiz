@@ -115,7 +115,7 @@ try{
         restQuibble();
         quibble.classList.add('hover');
     }
-    if (content_start >= 1200){
+    if (content_start >= 1150){
         target2.classList.add('targetPop');
     }
     if (content_start >= 1440){
