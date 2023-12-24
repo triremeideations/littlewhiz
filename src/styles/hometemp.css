@@ -244,27 +244,37 @@
 
     perspective: 500px;
 }
-.sideImg{
+
+.sideImg_0,
+.sideImg_1 {
     position: absolute;
-    top: 0;
-    width: 200px;
-    height: 200px;
+    top: 2%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
     /* background-color: black; */
-    border: 2px solid black;
+    /* border: 2px solid black; */
     pointer-events: none;
-    z-index: 99;
+    /* z-index: 99; */
+
     background-image: url('/public/img/plane_a.png');
+
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
+.sideImg_1 {
+    left: 20%;
+    top: calc(4 * var(--content_origin));
+}
 .ctn_box {
     position: absolute;
     top: 0;
     width: 350px;
     height: var(--ctn_box_height);
     
-    border: 2px black ridge;
+    /* border: 2px black ridge; */
     border-top-right-radius: 10%;
     border-top-left-radius: 10%;
     border-bottom: 2px solid transparent;

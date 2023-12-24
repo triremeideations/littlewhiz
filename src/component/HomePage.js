@@ -19,7 +19,6 @@ function HomePage(){
 
     return(
         <div className='gradic'>
-            <div className='sideImg'></div>
             <div className="master_frame">
                 <div className="cs_item cs_0"></div>
                 <div className="cs_item cs_1"></div>
@@ -41,6 +40,9 @@ function HomePage(){
             </div>
 
             <div className="content">
+                <div className='sideImg_0'></div>
+                <div className='sideImg_1'></div>
+
                 <div className="ctn_box ctn_0">
                     <p>
                         Welcome to LittleWhiz Learners, where every flutter of curiosity takes flight<i>!</i>
