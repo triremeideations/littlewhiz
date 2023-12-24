@@ -245,12 +245,13 @@
     perspective: 500px;
 }
 .sideImg{
-    position: relative;
+    position: absolute;
     top: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 200px;
+    height: 200px;
     background-color: black;
     z-index: 99;
+    background-image: url('/public/img/plane_a.png');
 }
 
 .ctn_box {
