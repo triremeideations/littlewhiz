@@ -115,8 +115,14 @@ try{
         restQuibble();
         quibble.classList.add('hover');
     }
-    if (content_start >= 1150){
+    if (content_start >= 1200){
         target2.classList.add('targetPop');
+    }
+    
+    if (window.innerHeight>=1180){
+        if (content_start >= 980){
+            target2.classList.add('targetPop');
+        }
     }
     if (content_start >= 1440){
         quibble.style.transform='rotateZ(-15deg)';
