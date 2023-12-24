@@ -252,6 +252,7 @@
     background-color: black;
     z-index: 99;
     background-image: url('/public/img/plane_a.png');
+    background-size: contain;
 }
 
 .ctn_box {
