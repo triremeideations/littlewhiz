@@ -177,7 +177,7 @@
         left 0.5s ease,
         top 0.8s ease-in-out,
         transform 0.5s ease;
-    color: transparent;
+    /* color: transparent; */
 
     background-image: url('/public/img/stby_0.png');
     
@@ -265,9 +265,11 @@
 }
 
 .sideImg_1 {
+    width: 360px;
     left: 20%;
     top: calc(4 * var(--content_origin));
     background-image: url('/public/img/plane_b.png');
+
 }
 .ctn_box {
     position: absolute;
@@ -302,7 +304,7 @@
     padding: 10%;
     font-family: 'refbeverage', sans-serif;
     font-size: 130%;
-    line-height: 1.2;
+    line-height: 1.1;
     z-index: 2;
 }
 @media only screen and (max-width: 540px){

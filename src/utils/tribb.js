@@ -140,11 +140,13 @@ try{
     }
 
     function boxpop(){
-        if (content_start >= 1490){
+        if (content_start >= 1490 ||
+            remnant_scroll <= 0){
             extra.style.transform='scale(1)';
             sessionStorage.setItem('flight','reached');
         }
-        else if(content_start < 1490){
+        else if(content_start < 1490 ||
+        remnant_scroll > 0){
             extra.style.transform='scale(0)';
         }
     }
