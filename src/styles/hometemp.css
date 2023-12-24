@@ -267,6 +267,7 @@
 .sideImg_1 {
     left: 20%;
     top: calc(4 * var(--content_origin));
+    background-image: url('/public/img/plane_b.png');
 }
 .ctn_box {
     position: absolute;
