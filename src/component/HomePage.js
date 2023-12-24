@@ -19,7 +19,7 @@ function HomePage(){
 
     return(
         <div className='gradic'>
-            <div className='sideImg'>What is going on?</div>
+            <div className='sideImg'></div>
             <div className="master_frame">
                 <div className="cs_item cs_0"></div>
                 <div className="cs_item cs_1"></div>

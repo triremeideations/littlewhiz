@@ -250,9 +250,12 @@
     width: 200px;
     height: 200px;
     /* background-color: black; */
+    border: 2px solid black;
+    pointer-events: none;
     z-index: 99;
     background-image: url('/public/img/plane_a.png');
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .ctn_box {
