@@ -249,7 +249,7 @@
     top: 0;
     width: 200px;
     height: 200px;
-    background-color: black;
+    /* background-color: black; */
     z-index: 99;
     background-image: url('/public/img/plane_a.png');
     background-size: contain;
