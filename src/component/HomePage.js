@@ -12,6 +12,7 @@ function HomePage(){
     },[]);
 
     const navigate = useNavigate();
+
     const goToCategory =()=>{
         sessionStorage.setItem('lock','away');
         navigate('/category');        

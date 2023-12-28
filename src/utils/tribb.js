@@ -124,6 +124,7 @@ try{
             target2.classList.add('targetPop');
         }
     }
+    
     if (content_start >= 1440){
         quibble.style.transform='rotateZ(-15deg)';
         quibble.style.left = '70%';

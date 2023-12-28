@@ -223,11 +223,10 @@
     100%{
         background-image: url('/public/img/stby_5.png');
     }
-    
 }
 
 /* resize quibble for desktops */
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 750px){
     .scroll_1 {
         width: 200px;
         height: 225px;
