@@ -1,26 +1,25 @@
 /* eslint-disable no-unused-vars */
 
-// /***** FIREBASE integration ******/
+/***** FIREBASE integration ******/
 
-// // Import needed functions from required SDKs
-// import { initializeApp }
-// from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+// Import needed functions from required SDKs
+import { initializeApp } from "firebase/app";
 
 // // import { getFirestore }
 // // from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
 
-// import {    getAuth,
-//             createUserWithEmailAndPassword,
-//             onAuthStateChanged,
-//             signInWithEmailAndPassword,
-//             sendPasswordResetEmail,
-//             signOut
-// }
-// from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+import {    getAuth,
+            createUserWithEmailAndPassword,
+            onAuthStateChanged,
+            signInWithEmailAndPassword,
+            sendPasswordResetEmail,
+            signOut
+}
+from "firebase/auth";
 
-// /**google login alternative */
-// import { GoogleAuthProvider, signInWithPopup }
-// from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+/**google login alternative */
+import { GoogleAuthProvider, signInWithPopup }
+from "firebase/auth"
 
 
 // Firebase configuration
