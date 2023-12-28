@@ -30,7 +30,7 @@ const firebaseConfig = {
     projectId: "littlewhiz-learner",
     storageBucket: "littlewhiz-learner.appspot.com",
     messagingSenderId: "315417833283",
-    appId: "1:315417833283:web:1aa0e0703cd1848e7b09f6"
+    appId: "1:315417833283:web:1aa0e0703cd1848c7b09f6"
 };
 
 // Initialize Firebase

@@ -1,8 +1,7 @@
 import { 
     newLearner,
-    loginLearner, logoutLearner,
-    infoLearner, 
-    loginWithGoogle} from "../engine/learner-worker";
+    loginLearner, logoutLearner, infoLearner, 
+    loginWithGoogle } from "../engine/learner-worker";
 
 const UserPage =()=>{
     return(
