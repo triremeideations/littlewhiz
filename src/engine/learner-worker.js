@@ -13,6 +13,8 @@ import {    getAuth,
             onAuthStateChanged,
             signInWithEmailAndPassword,
             sendPasswordResetEmail,
+            sendSignInLinkToEmail,
+            isSignInWithEmailLink, signInWithEmailLink,
             signOut
 }
 from "firebase/auth";
@@ -38,11 +40,28 @@ const app = initializeApp(firebaseConfig);
 // authenticate
 const auth = getAuth(app);
 const email = "triremesolutions@proton.me";
-const password = "test_ting";
+const password = "present";
 
 
 /*****************************/
 // littleWhiz User functions //
+
+const homeURL = 'https://trireme-littlewhiz.netlify.app';
+
+const actionCodeSettings = {
+    url: `${homeURL}`,
+    handleCodeInApp: true,
+    iOS: {
+      bundleId: 'com.littlewhiz.ios'
+    },
+    android: {
+      packageName: 'com.littlewhiz.android',
+      installApp: true,
+      minimumVersion: '12'
+    },
+    dynamicLinkDomain: 'trireme-littlewhiz.netlify.app'//invalid. firbase host required
+  };
+
 
 // create new account 
 export function newLearner(){
@@ -52,13 +71,56 @@ export function newLearner(){
         const uid = learner.uid;
         console.log(uid);
         console.log('new Learner account successfully created!');
+        // set localstorage to ensure the next step to login is carried out with same email
+        // preventing logging a different device
+        window.localStorage.setItem('emailForSignIn', email);
     })
+    // .then(()=> verifyLearnerEmail())
+    .then(()=> loginLearnerViaEmail())
     .catch((e)=>{
         const errorCode = e.code;
         const errorMsg = e.message;
-        console.log(errorCode + ' ' + errorMsg);
+        console.log('report create: ' + errorCode + ' ' + errorMsg);
     })
 }
+
+/**********************/
+// verify email
+
+function verifyLearnerEmail(){
+    sendSignInLinkToEmail(auth, email, actionCodeSettings)
+    .then(() => {
+        console.log('login/verification link sent to email');
+        window.localStorage.setItem('emailForSignIn', email);
+    }
+    )
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log (`report verify... code: ${errorCode} message: ${errorMessage}`);
+    });
+}
+//app not hosted on firebase, so this verify function will be skipped.
+/*********************/
+
+function loginLearnerViaEmail(){
+    if (isSignInWithEmailLink(auth, window.location.href)) {
+        let email = window.localStorage.getItem('emailForSignIn');
+        if (!email) {
+          email = window.prompt('Please provide your email for confirmation');
+        }
+        signInWithEmailLink(auth, email, window.location.href)
+          .then((credentials) => {
+            // Clear email from localstorage.
+            window.localStorage.removeItem('emailForSignIn');
+            const learner = credentials.user;
+          })
+          .catch((error) => {
+            console.log('email link login error:'+ error)
+          });
+      }
+}
+
 
 // sign in
 export function loginLearner(){
@@ -69,7 +131,8 @@ export function loginLearner(){
             const uid = learner.uid;
             console.log('learner successfully logged in!');
         })
-    } catch{
+    } catch(e){
+        console.warn(e);
         console.log('user is not logged in');    
     }
 }
@@ -104,12 +167,10 @@ export function infoLearner(){
     } catch(e){console.log(e)};
 }
 
-
 // password reset
-
 export function forgotPassword(){
     try {
-        sendPasswordResetEmail(auth, email, 'sender')
+        sendPasswordResetEmail(auth, email)
         .then(console.log('prompt user to check email'));
     } catch (e) {
         console.log(e);
@@ -121,7 +182,7 @@ export function forgotPassword(){
 
 const provider = new GoogleAuthProvider();
 provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-auth.languageCode = 'it';
+auth.languageCode = 'en';
 
 export function loginWithGoogle(){
     signInWithPopup(auth, provider)

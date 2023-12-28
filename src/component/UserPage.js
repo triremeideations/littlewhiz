@@ -1,7 +1,8 @@
 import { 
     newLearner,
     loginLearner, logoutLearner, infoLearner, 
-    loginWithGoogle } from "../engine/learner-worker";
+    loginWithGoogle, 
+    forgotPassword} from "../engine/learner-worker";
 
 const UserPage =()=>{
     return(
@@ -20,6 +21,9 @@ const UserPage =()=>{
             </button>
             <button onClick={()=>loginWithGoogle()} style={{padding: '5px'}}>
                 Google Log in
+            </button>
+            <button onClick={()=>forgotPassword()} style={{padding: '5px'}}>
+                Reset Password
             </button>
         </div>
     )
