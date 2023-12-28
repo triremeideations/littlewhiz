@@ -219,15 +219,15 @@ export function deleteLearner() {
     });
 }
 
-export function shakyLearner(){
-    const auth = getAuth();
-    const shakeLearner = auth.currentUser;
+// export function shakyLearner(){
+//     const auth = getAuth();
+//     const shakeLearner = auth.currentUser;
 
-    // const credential = promptForCredentials();
-    reauthenticateWithCredential(shakeLearner, credential)
-    .then(() => {
-        console.log('your account is re-confirmed');
-    }).catch((error) => {
-        console.log(error);
-    });
-}
+//     // const credential = promptForCredentials();
+//     reauthenticateWithCredential(shakeLearner, credential)
+//     .then(() => {
+//         console.log('your account is re-confirmed');
+//     }).catch((error) => {
+//         console.log(error);
+//     });
+// }
