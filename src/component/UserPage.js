@@ -2,7 +2,8 @@ import {
     newLearner,
     loginLearner, logoutLearner, infoLearner, 
     loginWithGoogle, 
-    forgotPassword} from "../engine/learner-worker";
+    forgotPassword,
+    deleteLearner } from "../engine/learner-worker";
 
 const UserPage =()=>{
     return(
@@ -24,6 +25,9 @@ const UserPage =()=>{
             </button>
             <button onClick={()=>forgotPassword()} style={{padding: '5px'}}>
                 Reset Password
+            </button>
+            <button onClick={()=>deleteLearner()} style={{padding: '5px'}}>
+                DELETE ACCOUNT
             </button>
         </div>
     )

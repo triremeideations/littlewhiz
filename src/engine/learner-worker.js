@@ -15,7 +15,9 @@ import {    getAuth,
             sendPasswordResetEmail,
             sendSignInLinkToEmail,
             isSignInWithEmailLink, signInWithEmailLink,
-            signOut
+            signOut,
+            reauthenticateWithCredential,
+            deleteUser
 }
 from "firebase/auth";
 
@@ -67,6 +69,8 @@ const actionCodeSettings = {
 export function newLearner(){
     createUserWithEmailAndPassword(auth, email, password)
     .then((credentials) => {
+        console.log(credentials);
+        console.log('all above');
         const learner = credentials.user;
         const uid = learner.uid;
         console.log(uid);
@@ -197,5 +201,33 @@ export function loginWithGoogle(){
         const credential = GoogleAuthProvider.credentialFromError(error);
         console.log(`errorCode: ${errorCode} msg: ${errorMessage}
                     email: ${email} cred: ${credential}`)
+    });
+}
+
+/****************************/
+/* DELETING LEARNER ACCOUNT */
+
+export function deleteLearner() {
+    const auth = getAuth();
+    const killLearner = auth.currentUser;
+    
+    deleteUser(killLearner)
+    .then(() => {
+        console.log('this account has been deleted successfully!');
+    }).catch((error) => {
+        console.log(error)
+    });
+}
+
+export function shakyLearner(){
+    const auth = getAuth();
+    const shakeLearner = auth.currentUser;
+
+    // const credential = promptForCredentials();
+    reauthenticateWithCredential(shakeLearner, credential)
+    .then(() => {
+        console.log('your account is re-confirmed');
+    }).catch((error) => {
+        console.log(error);
     });
 }
