@@ -25,7 +25,7 @@ function HomePage(){
                 <div className="cs_item cs_1"></div>
                 <div className="cs_item cs_2">
                     <p className='smarty pants'>
-                        LittleWhiz Learners
+                        LittleWhiz Learner
                     </p>
                 </div>
                 <div className='cs_item cs_x'>
@@ -46,7 +46,7 @@ function HomePage(){
 
                 <div className="ctn_box ctn_0">
                     <p>
-                        Welcome to LittleWhiz Learners, where every flutter of curiosity takes flight<i>!</i>
+                        Welcome to LittleWhiz Learner, where every flutter of curiosity takes flight<i>!</i>
                         <br></br>
                         <br></br>
                         Meet Quibble, the Mechanical Owl... Your wise companion on this journey of discovery.</p>
@@ -57,7 +57,7 @@ function HomePage(){
                         <br></br>
                         <br></br>
                         Watch your skills soar with each engaging activity.
-                        From numbers to words and pictures, LittleWhiz learners offers a world of wonder.
+                        From numbers to words and pictures, LittleWhiz Learner offers a world of wonder.
                     </p>
                 </div>
                 <div className="ctn_box ctn_2">
