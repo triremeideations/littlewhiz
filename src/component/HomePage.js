@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import '../styles/hometemp.css'
 import '../styles/quibbleModes.css'
@@ -69,10 +69,7 @@ function HomePage(){
                 </div>
             </div>
             
-            <div
-                className="extra"
-                onClick={goToCategory}
-            >
+            <div className="extra">
                 <p>
                     And you know the best part?
                     <br></br> 
@@ -82,6 +79,19 @@ function HomePage(){
                     <br></br>
                     Click Here To Join IN Now!
                 </p>
+            </div>
+            <div
+                style={
+                    {
+                        backgroundColor:'black',
+                        color: 'white',
+                    }}>
+                <br></br>
+                <br></br>
+                <Link to='/privacy-policy'>privacy policy</Link>
+                <br></br>
+                <br></br>
+                <p onClick={goToCategory}>Categories</p>
             </div>
         </div>
     )

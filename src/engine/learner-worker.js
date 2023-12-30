@@ -42,7 +42,7 @@ const app = initializeApp(firebaseConfig);
 // authenticate
 const auth = getAuth(app);
 const email = "triremesolutions@proton.me";
-const password = "present";
+const password = "freedom";
 
 
 /*****************************/
@@ -137,6 +137,10 @@ export function loginLearner(){
             const uid = learner.uid;
             console.log('learner successfully logged in!');
         })
+        .catch((e)=>{
+            console.log(e);
+            console.log('wrong email or password');
+        });
     } catch(e){
         console.warn(e);
         console.log('user is not logged in');    
