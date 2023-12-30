@@ -3,6 +3,7 @@ import HomePage from './component/HomePage';
 import SelectionPage from './component/SelectionPage';
 import BeginQuizzes from './component/QuizPage';
 import UserPage from './component/UserPage';
+import PolicyPage from './component/PolicyPage';
 
 
 const App=()=>{
@@ -13,6 +14,7 @@ const App=()=>{
                 <Route path="/category" element={<SelectionPage/>}/>
                 <Route path="/ready" element={<BeginQuizzes/>}/>
                 <Route path="/login" element={<UserPage/>}/>
+                <Route path="/privacy-policy" element={<PolicyPage/>}/>
                 <Route path="*" element={<HomePage/>}/>
             </Routes>
         </BrowserRouter>
