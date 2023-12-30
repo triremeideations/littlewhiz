@@ -48,7 +48,8 @@ const password = "present";
 /*****************************/
 // littleWhiz User functions //
 
-const homeURL = 'https://trireme-littlewhiz.netlify.app';
+// const homeURL = 'https://trireme-littlewhiz.netlify.app';
+const homeURL = 'https://littlewhiz-learner.web.app';
 
 const actionCodeSettings = {
     url: `${homeURL}`,
@@ -61,7 +62,8 @@ const actionCodeSettings = {
       installApp: true,
       minimumVersion: '12'
     },
-    dynamicLinkDomain: 'trireme-littlewhiz.netlify.app'//invalid. firbase host required
+    dynamicLinkDomain: 'littlewhizlearner.page.link';
+    //dynamicLinkDomain: 'trireme-littlewhiz.netlify.app'//invalid. firbase host required
   };
 
 
@@ -79,7 +81,7 @@ export function newLearner(){
         // preventing logging a different device
         window.localStorage.setItem('emailForSignIn', email);
     })
-    // .then(()=> verifyLearnerEmail())
+    .then(()=> verifyLearnerEmail()) // try this now, since I set up dynamic links
     .then(()=> loginLearnerViaEmail())
     .catch((e)=>{
         const errorCode = e.code;
