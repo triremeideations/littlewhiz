@@ -14,6 +14,7 @@ import {    getAuth,
             signInWithEmailAndPassword,
             sendPasswordResetEmail,
             sendSignInLinkToEmail,
+            sendEmailVerification,
             isSignInWithEmailLink, signInWithEmailLink,
             signOut,
             reauthenticateWithCredential,
@@ -92,11 +93,20 @@ export function newLearner(){
 
 /**********************/
 // verify email
+export function verifyLearnerEmail(){
+    const user = auth.currentUser;
+    sendEmailVerification(user).then(function() {
+        console.log('email verification link sent to email');
+    }).catch(function(e) {
+        console.log(e);
+    });
+}
 
-function verifyLearnerEmail(){
+
+function loginWithEmail(){
     sendSignInLinkToEmail(auth, email, actionCodeSettings)
     .then(() => {
-        console.log('login/verification link sent to email');
+        console.log('login link sent to email');
         window.localStorage.setItem('emailForSignIn', email);
     }
     )
