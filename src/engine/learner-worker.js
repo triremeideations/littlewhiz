@@ -62,7 +62,7 @@ const actionCodeSettings = {
       installApp: true,
       minimumVersion: '12'
     },
-    dynamicLinkDomain: 'littlewhizlearner.page.link';
+    dynamicLinkDomain: 'littlewhizlearner.page.link'
     //dynamicLinkDomain: 'trireme-littlewhiz.netlify.app'//invalid. firbase host required
   };
 
