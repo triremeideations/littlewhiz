@@ -448,10 +448,33 @@
     align-items: center;
     justify-content: center;
 
-    font-size: 130%;
+    font-size: 120%;
     line-height: 1.2;
     box-sizing: border-box;
+    padding: 5%;
     word-spacing: 2px;
 
     cursor: pointer;
+    display: flex;
+    
+    gap: 5%;
+}
+
+#extra2{
+    display: flex;
+    flex-direction: column;
+}
+#extra2 button {
+    padding: 7%;
+    margin: 5%;
+    cursor: pointer;
+    background-color: black;
+    border: 1px solid goldenrod;
+    color: goldenrod;
+    border-radius: 5px;
+}
+#extra2 button:hover{
+    background-color: goldenrod;
+    color: black;
+    transition: background-color 1s ease;
 }

@@ -17,6 +17,9 @@ function HomePage(){
         sessionStorage.setItem('lock','away');
         navigate('/category');        
     };
+    const goToCreate=()=>{
+        navigate('/new-learner');
+    }
 
     return(
         <div className='gradic'>
@@ -70,15 +73,26 @@ function HomePage(){
             </div>
             
             <div className="extra">
-                <p>
+                <div id='extra1'>
                     And you know the best part?
-                    <br></br> 
+                    <br/> 
                     It's totally FREE!!!
-                    <br></br>
+                    <br/>
                     So what are you waiting for?!
-                    <br></br>
-                    Click Here To Join IN Now!
-                </p>
+                    <br/>
+                    Join IN Now!
+                </div>
+                <div id='extra2'>
+                    <button onClick={goToCreate}>
+                        Sign UP!
+                    </button>
+                    <button>
+                        Sign IN!
+                    </button>
+                    <button>
+                        Sign in with Google...
+                    </button>
+                </div>
             </div>
             <div
                 style={

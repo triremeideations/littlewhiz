@@ -4,9 +4,7 @@
 
 // Import needed functions from required SDKs
 import { initializeApp } from "firebase/app";
-
-// // import { getFirestore }
-// // from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
+import { getFirestore } from "firebase/firestore";
 
 import {    getAuth,
             createUserWithEmailAndPassword,
@@ -49,7 +47,6 @@ const password = "freedom";
 /*****************************/
 // littleWhiz User functions //
 
-// const homeURL = 'https://trireme-littlewhiz.netlify.app';
 const homeURL = 'https://littlewhiz-learner.web.app';
 
 const actionCodeSettings = {
@@ -64,8 +61,7 @@ const actionCodeSettings = {
       minimumVersion: '12'
     },
     dynamicLinkDomain: 'littlewhizlearner.page.link'
-    //dynamicLinkDomain: 'trireme-littlewhiz.netlify.app'//invalid. firbase host required
-  };
+};
 
 
 // create new account 
