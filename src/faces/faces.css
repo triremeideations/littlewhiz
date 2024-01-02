@@ -5,6 +5,13 @@
 }
 
 @font-face {
+    font-family: 'cagliostro';
+    src: url('./cagliostro-regular.woff');
+    font-display: fallback;
+}
+
+
+@font-face {
     font-family: 'openscript';
     src: url('./openscript.woff');
     font-display: fallback;

@@ -22,7 +22,7 @@ function HomePage(){
     }
 
     return(
-        <div className='gradic'>
+        <div className='gradic nullify'>
             <div className="master_frame">
                 <div className="cs_item cs_0"></div>
                 <div className="cs_item cs_1"></div>
@@ -76,11 +76,11 @@ function HomePage(){
                 <div id='extra1'>
                     And you know the best part?
                     <br/> 
-                    It's totally FREE!!!
+                    Joining us is FREE!!!
                     <br/>
                     So what are you waiting for?!
                     <br/>
-                    Join IN Now!
+                    Get this Now!
                 </div>
                 <div id='extra2'>
                     <button onClick={goToCreate}>
