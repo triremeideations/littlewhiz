@@ -41,3 +41,9 @@
 .nullify {
     display: none;
 }
+.accepted {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -99;
+    transition: 2s;
+}

@@ -22,7 +22,7 @@ function HomePage(){
     }
 
     return(
-        <div className='gradic nullify'>
+        <div className='gradic'>
             <div className="master_frame">
                 <div className="cs_item cs_0"></div>
                 <div className="cs_item cs_1"></div>

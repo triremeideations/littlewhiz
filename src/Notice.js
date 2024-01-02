@@ -1,8 +1,15 @@
 import './styles/notice.css';
+import awareness, { checkAwareness } from './utils/acceptNotice.js';
+import { useEffect } from 'react';
 
-const Notice = () => {
+const PHA =()=> {
+  useEffect(()=>{
+    checkAwareness();
+  })
+
   return (
     <div className='notice'>
+
         <h2>
             CAUTION
         </h2>
@@ -16,11 +23,11 @@ const Notice = () => {
             adverse effects are observed.     
         </p>
         <br/>
-        <button>
+        <button onClick={ awareness }>
             I understand. Continue.
         </button>
     </div>
   )
 }
 
-export default Notice;
+export default PHA;
