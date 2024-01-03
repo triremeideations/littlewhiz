@@ -1,0 +1,22 @@
+*{
+    --icons: gray;
+    --links: royalblue;
+    --glister: goldenrod; 
+}
+
+footer {
+    background-color: black;
+    color: var(--icons);
+    fill: var(--icons);
+    text-align: center;
+}
+footer svg:hover{
+    fill: goldenrod;
+}
+footer a.plug
+{
+    color: var(--links);
+}
+footer a:hover{
+    color: var(--glister);
+}

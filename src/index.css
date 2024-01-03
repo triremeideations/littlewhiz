@@ -1,10 +1,16 @@
 * {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  outline: none;
-  -webkit-outline: none;
-  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+    outline: none;
+    padding: 0;
+    text-decoration: none;
+    text-emphasis: none;
+    -webkit-text-emphasis: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialised;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {

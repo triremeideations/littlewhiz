@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import '../styles/hometemp.css'
+import '../styles/footer.css'
 import '../styles/quibbleModes.css'
 import homework from '../utils/home';
+import FooterSub from '../subcomponent/FooterSub';
 
 function HomePage(){
 
@@ -17,7 +19,7 @@ function HomePage(){
         sessionStorage.setItem('lock','away');
         navigate('/category');        
     };
-    const goToCreate=()=>{
+    const goToCreate =()=>{
         navigate('/new-learner');
     }
 
@@ -76,11 +78,11 @@ function HomePage(){
                 <div id='extra1'>
                     And you know the best part?
                     <br/> 
-                    Joining us is FREE!!!
+                    Signing Up is FREE!!!
                     <br/>
                     So what are you waiting for?!
                     <br/>
-                    Get this Now!
+                    Join us Now!
                 </div>
                 <div id='extra2'>
                     <button onClick={goToCreate}>
@@ -94,19 +96,11 @@ function HomePage(){
                     </button>
                 </div>
             </div>
-            <div
-                style={
-                    {
-                        backgroundColor:'black',
-                        color: 'white',
-                    }}>
-                <br></br>
-                <br></br>
-                <Link to='/privacy-policy'>privacy policy</Link>
-                <br></br>
-                <br></br>
-                <p onClick={goToCategory}>Categories</p>
-            </div>
+            <footer>
+                <FooterSub
+                    goToCategory={goToCategory}
+                />
+            </footer>
         </div>
     )
 }
