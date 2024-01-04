@@ -35,6 +35,10 @@ function LearnerInputs (){
             );
             newLearner(formData.email, formData.password, formData.username);
         }
+
+        // const learnerDetails =()=> {
+        //     let info = JSON.parse(localStorage.getItem('regInfo')) 
+        // }
     
 
   return (
@@ -84,6 +88,43 @@ function LearnerInputs (){
             </div>
 
             <div className='side_frame'>
+            </div>
+
+            <div className='dialog success'>
+                <h1>Hooray!</h1>
+                <br/>
+                <p> 
+                    Welcome, placeholder.
+                    <br/>
+                    <br/>
+                    You are officially a little whiz! <br/>
+                    Get ready for loads of fun, games and learning.
+                    <br/><br/>
+                    Your amazing journey has begun!
+                    <br/><br/>
+                    Regards,<br/>
+                    Quibble.
+                    <br/><br/>
+                </p>
+                
+                <a href='/'>
+                    <button>Go to Dashboard</button>
+                </a>
+            </div>
+            <div className='dialog failed'>
+                <h1>Oops!</h1>
+                <br/>
+                <p>
+                    It seems like this email has already been registered!
+                    <br/>
+                    <br/>
+                    If it hasn't, check that your internet connection is active.
+                    <br/>
+                    <br/>
+                    Please try again...
+                </p>
+                <br/>
+                <button onClick={()=>window.location.reload()}>CLOSE</button>
             </div>
         </div>
     </div>

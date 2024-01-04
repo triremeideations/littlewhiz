@@ -70,3 +70,53 @@
 .side_frame{
     background-color: rosybrown;
 }
+
+/*dialog boxes to alert user*/
+.dialog {
+    position: absolute;
+    width: 90%;
+    height: 95%;
+    align-self: center;
+    top: 5%;
+    left: 5%;
+    border-radius: 10px;
+    /* background-color: #c0c0c015; */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    transform: scale(0);
+    transition: transform 1s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 5%;
+
+    flex-direction: column;
+}
+.dialog p {
+    text-shadow: 
+    2px 5px 5px black;
+}
+.dialog button{
+    padding: 10px;
+}
+.dialog.success{
+    background-color: rgba(50, 255, 50, 0.333);
+    transform: scale(1);
+}
+.dialog.failed{
+    background-color: rgba(255, 50, 50, 0.333);
+}
+.dialog.failed h1{
+    color: red;
+    text-shadow: 1px 1px 4px black;
+}
+.dialog.success h1{
+    color: greenyellow;
+    text-shadow: 1px 1px 4px black;
+}
+.expand_dialog{
+    transform: scale(1);
+}

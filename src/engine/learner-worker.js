@@ -8,6 +8,7 @@ import { getFirestore } from "firebase/firestore";
 
 import {    getAuth,
             createUserWithEmailAndPassword,
+            updateProfile,
             onAuthStateChanged,
             signInWithEmailAndPassword,
             sendPasswordResetEmail,
@@ -83,6 +84,8 @@ export function newLearner(email, password, regName){
     // try this verify now, since I set up dynamic links
     .then(()=> loginLearnerViaEmail())
     .then(()=> updateDisplayName(regName))
+    // add a function that shows a dialog box
+    // add a function that saves these details to local storage
     .catch((e)=>{
         const errorCode = e.code;
         const errorMsg = e.message;
@@ -105,11 +108,10 @@ export function verifyLearnerEmail(){
 /*Update display name*/
 function updateDisplayName(x){
     const user = auth.currentUser;
-    user.updateProfile({
-        displayName: `${x}`
-    }).then(
-            ()=>console.log(`successfully set displayName to ${user.displayName}`)
-        )
+    updateProfile(user, {displayName: `${x}`})
+    .then(
+        ()=>console.log(`successfully set displayName to ${user.displayName}`)
+    )
 }
 
 /********/
