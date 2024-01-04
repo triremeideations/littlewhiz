@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import '../styles/hometemp.css'
 import '../styles/footer.css'
@@ -12,16 +11,6 @@ function HomePage(){
     useEffect(()=>{
         homework();
     },[]);
-
-    const navigate = useNavigate();
-
-    const goToCategory =()=>{
-        sessionStorage.setItem('lock','away');
-        navigate('/category');        
-    };
-    const goToCreate =()=>{
-        navigate('/new-learner');
-    }
 
     return(
         <div className='gradic'>
@@ -93,21 +82,19 @@ function HomePage(){
                     Join us Now!
                 </div>
                 <div id='extra2'>
-                    <button onClick={goToCreate}>
-                        Sign UP!
-                    </button>
-                    <button>
-                        Sign IN!
-                    </button>
-                    <button>
-                        Sign in with Google...
-                    </button>
+                    <a href='/new-learner'>
+                        <button> Sign UP! </button>
+                    </a>
+                    <a href='/login'>
+                        <button> Sign IN! </button>
+                    </a>
+                    <a href='/new-learner'>
+                        <button> Sign in with Google... </button>
+                    </a>
                 </div>
             </div>
             <footer>
-                <FooterSub
-                    goToCategory={goToCategory}
-                />
+                <FooterSub />
             </footer>
         </div>
     )

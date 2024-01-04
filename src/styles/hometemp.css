@@ -464,8 +464,11 @@
     display: flex;
     flex-direction: column;
 }
-#extra2 button {
+
+#extra2 a button {
     padding: 10%;
+    padding-left: 20%;
+    padding-right: 20%;
     margin: 5%;
     cursor: pointer;
     background-color: black;
@@ -473,7 +476,7 @@
     color: goldenrod;
     border-radius: 5px;
 }
-#extra2 button:hover{
+#extra2 a button:hover{
     background-color: goldenrod;
     color: black;
     transition: background-color 1s ease;
