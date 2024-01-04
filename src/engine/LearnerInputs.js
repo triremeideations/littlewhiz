@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/sign_up.css';
+import { newLearner } from './learner-worker';
 
 function LearnerInputs (){
 
@@ -22,10 +23,17 @@ function LearnerInputs (){
 
         const handleSubmit=(e)=>{
             e.preventDefault();
-            console.log(`
-                This is ${formData.username}'s email: ${formData.email}.
-                This is their password: ${formData.password}
-            `);
+            let tempReg = [];
+            tempReg.push({
+                'learnerName': formData.username,
+                'learnerEmail': formData.email,
+                'learnerPasskey':formData.password
+            })
+            const learnerRegInfo = tempReg[0];
+            localStorage.setItem(
+                'l-reg-info', JSON.stringify(learnerRegInfo)
+            );
+            newLearner(formData.email, formData.password, formData.username);
         }
     
 

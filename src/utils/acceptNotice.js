@@ -10,7 +10,7 @@ export function checkAwareness(){
             gradic.classList.add('maximise');
         }
     } catch{
-        console.log('navigated off mainpage. targeting a subpage');
+        // console.log('navigated off mainpage. targeting a subpage');
     }
 }
 

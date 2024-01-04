@@ -40,8 +40,8 @@ const app = initializeApp(firebaseConfig);
 
 // authenticate
 const auth = getAuth(app);
-const email = "triremesolutions@proton.me";
-const password = "freedom";
+// const email = "triremesolutions@proton.me";
+// const password = "freedom";
 
 
 /*****************************/
@@ -65,7 +65,7 @@ const actionCodeSettings = {
 
 
 // create new account 
-export function newLearner(){
+export function newLearner(email, password, regName){
     createUserWithEmailAndPassword(auth, email, password)
     .then((credentials) => {
         console.log(credentials);
@@ -74,12 +74,15 @@ export function newLearner(){
         const uid = learner.uid;
         console.log(uid);
         console.log('new Learner account successfully created!');
-        // set localstorage to ensure the next step to login is carried out with same email
+        // set localstorage to ensure the next step to login is
+        // carried out with same email
         // preventing logging a different device
         window.localStorage.setItem('emailForSignIn', email);
     })
-    .then(()=> verifyLearnerEmail()) // try this now, since I set up dynamic links
+    .then(()=> verifyLearnerEmail())
+    // try this verify now, since I set up dynamic links
     .then(()=> loginLearnerViaEmail())
+    .then(()=> updateDisplayName(regName))
     .catch((e)=>{
         const errorCode = e.code;
         const errorMsg = e.message;
@@ -98,23 +101,19 @@ export function verifyLearnerEmail(){
     });
 }
 
-
-function loginWithEmail(){
-    sendSignInLinkToEmail(auth, email, actionCodeSettings)
-    .then(() => {
-        console.log('login link sent to email');
-        window.localStorage.setItem('emailForSignIn', email);
-    }
-    )
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log (`report verify... code: ${errorCode} message: ${errorMessage}`);
-    });
-}
-//app not hosted on firebase, so this verify function will be skipped.
 /*********************/
+/*Update display name*/
+function updateDisplayName(x){
+    const user = auth.currentUser;
+    user.updateProfile({
+        displayName: `${x}`
+    }).then(
+            ()=>console.log(`successfully set displayName to ${user.displayName}`)
+        )
+}
 
+/********/
+/*automatically login the created, current user*/
 function loginLearnerViaEmail(){
     if (isSignInWithEmailLink(auth, window.location.href)) {
         let email = window.localStorage.getItem('emailForSignIn');
@@ -132,10 +131,32 @@ function loginLearnerViaEmail(){
           });
       }
 }
+/****************/
+
+
+/*************/
+/*this differs from the above in that it is a standalone request for the sign in link
+to be sent to an existing user email*/
+/* it is not integrated into newLearner()*/
+
+function loginWithEmail(email){
+    sendSignInLinkToEmail(auth, email, actionCodeSettings)
+    .then(() => {
+        console.log('login link sent to email');
+        window.localStorage.setItem('emailForSignIn', email);
+    }
+    )
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log (`report verify... code: ${errorCode} message: ${errorMessage}`);
+    });
+}
+/*********************/
 
 
 // sign in
-export function loginLearner(){
+export function loginLearner(email, password){
     try {
         signInWithEmailAndPassword(auth, email, password)
         .then((credentials) => {
@@ -184,7 +205,7 @@ export function infoLearner(){
 }
 
 // password reset
-export function forgotPassword(){
+export function forgotPassword(email){
     try {
         sendPasswordResetEmail(auth, email)
         .then(console.log('prompt user to check email'));
@@ -192,6 +213,7 @@ export function forgotPassword(){
         console.log(e);
     }
 }
+
 
 /********************/
 /**GOOGLE SIGN-in ***/

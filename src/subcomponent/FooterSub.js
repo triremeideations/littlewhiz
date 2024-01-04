@@ -23,9 +23,11 @@ const FooterSub = () => {
                 <li className="social-item nav-item">
                     <a href="https://t.me/trireme_ideations" className="social-link">
                         <svg
-                            viewbox="0 0 24 24" width="25" height="25"
                             style={
                                 {
+                                viewBox:"0 0 24 24",
+                                width:"25",
+                                height:"25",
                                 fillRule:"evenodd",
                                 clipRule:"evenodd",
                                 strokeLinejoin:"round",
@@ -43,7 +45,13 @@ const FooterSub = () => {
                 <li className="social-item nav-item">
                     <a href="mailto:triremeideations@proton.me?subject=Requesting%20a%20Quote&body=Hi!%20I%27ve%20just%20visited%20the%20TriremeIdeations%20website.%20I%20would%20like%20to%20...%20" className="social-link">
                         <svg
-                            viewbox="0 0 24 24" width="25" height="25" fill-rule="evenodd" clip-rule="evenodd"
+                            style={{
+                                viewBox:"0 0 24 24",
+                                width:"25",
+                                height:"25", 
+                                fillRule:"evenodd",
+                                clipRule:"evenodd"
+                            }}
                         >
                             <path d="M22.288 21h-20.576c-.945 0-1.712-.767-1.712-1.712v-13.576c0-.945.767-1.712 1.712-1.712h20.576c.945 0 1.712.767 1.712 1.712v13.576c0 .945-.767 1.712-1.712 1.712zm-10.288-6.086l-9.342-6.483-.02 11.569h18.684v-11.569l-9.322 6.483zm8.869-9.914h-17.789l8.92 6.229s6.252-4.406 8.869-6.229z"/>
                             <title>
@@ -58,9 +66,15 @@ const FooterSub = () => {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                    <svg viewbox="0 0 24 24" width="25" height="25">
+                    <svg
+                        style={{
+                            viewBox:"0 0 24 24",
+                            width:"25",
+                            height:"25"
+                        }}
+                    >
                         <title>
-                        Facebook
+                            Facebook
                         </title>
                         <path d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/>
                     </svg>
@@ -72,8 +86,11 @@ const FooterSub = () => {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        <svg 
-                        viewbox="0 0 24 24" width="25" height="25">
+                        <svg
+                            style={{
+                                viewBox:"0 0 24 24", width:"25", height:"25"
+                            }}
+                            >
                             <title>
                                 X (Formerly Twitter)
                             </title>
@@ -98,7 +115,7 @@ const FooterSub = () => {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        <svg viewbox="0 0 24 24" width="25" height="25">
+                        <svg viewBox="0 0 24 24" width="25" height="25">
                             <title>
                                 Instagram
                             </title>
