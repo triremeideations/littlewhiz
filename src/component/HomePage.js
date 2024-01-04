@@ -25,6 +25,14 @@ function HomePage(){
 
     return(
         <div className='gradic'>
+            <button  onClick={
+                ()=>{
+                localStorage.clear();
+                window.location.reload();
+            }
+                }>
+                RESET... TEST!
+            </button>
             <div className="master_frame">
                 <div className="cs_item cs_0"></div>
                 <div className="cs_item cs_1"></div>

@@ -3,6 +3,7 @@ import awareness, { checkAwareness } from './utils/acceptNotice.js';
 import { useEffect } from 'react';
 
 const PHA =()=> {
+  
   useEffect(()=>{
     checkAwareness();
   })

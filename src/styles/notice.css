@@ -11,6 +11,7 @@
     top: 0;
     width: 100%;
     height: 100%;
+    height: 100vh;
     background-color: black;
     color: white;
     font-family: 'cagliostro','nunito', sans-serif;
@@ -32,6 +33,8 @@
     color: goldenrod;
     border: 1px solid white;
     transition: 0.5s background-color, 1s color;
+
+    pointer-events: all;
 }
 .notice button:hover {
     color: black;
@@ -40,6 +43,10 @@
 }
 .nullify {
     display: none;
+}
+.maximise {
+    height: auto;
+    visibility: visible;
 }
 .accepted {
     opacity: 0;

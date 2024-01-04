@@ -41,6 +41,8 @@
 
 .gradic {
     overflow-x: hidden;
+    visibility: hidden;
+    height: 0vh;
 }
 
 .master_frame {
@@ -463,7 +465,7 @@
     flex-direction: column;
 }
 #extra2 button {
-    padding: 7%;
+    padding: 10%;
     margin: 5%;
     cursor: pointer;
     background-color: black;
