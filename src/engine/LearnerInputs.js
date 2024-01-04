@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/sign_up.css';
 
 function LearnerInputs (){
 
@@ -29,43 +30,56 @@ function LearnerInputs (){
     
 
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <label>
-                Username:
-                <input
-                    type='text'
-                    name='username'
-                    value = {formData.username}
-                    onChange={handleChange}
-                    required
-                />
-            </label>
-            <label>
-                Email:
-                <input
-                    type='email'
-                    name='email'
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-            </label>
-            <label>
-                password:
-                <input
-                    type='password'
-                    name='password'
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
-            </label>
-            <br/>
-            <button type='submit'>GO Champ!</button>
-        </form>
+    <div className='backdrop'>
+        <div className='frames'>
+            <div className='signup_frame'>
+                <br/>
+                <h3>Create New Learner Profile</h3>
+                <br/><br/>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Username:
+                        <br/>
+                        <input
+                            type='text'
+                            name='username'
+                            value = {formData.username}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label><br/>
+                    <label>
+                        Email:
+                        <br/>
+                        <input
+                            type='email'
+                            name='email'
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label><br/>
+                    <label>
+                        Password:
+                        <br/>
+                        <input
+                            type='password'
+                            name='password'
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <br/><br/>
+                    <button type='submit'>GO Champ!</button>
+                </form>
+            </div>
+
+            <div className='side_frame'>
+            </div>
+        </div>
     </div>
   )
 }
 
-export default LearnerInputs
+export default LearnerInputs;

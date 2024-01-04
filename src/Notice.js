@@ -6,7 +6,7 @@ const PHA =()=> {
   
   useEffect(()=>{
     checkAwareness();
-  })
+  },[])
 
   return (
     <div className='notice'>
