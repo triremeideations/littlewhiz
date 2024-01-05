@@ -87,8 +87,8 @@ export function newLearner(email, password, regName){
         })
     .catch((e)=>{
         const errorCode = e.code;
-        // const errorMsg = e.message;
-        // console.log('report create: ' + errorCode + ' msg:' + errorMsg);
+        const errorMsg = e.message;
+        console.log('report create: ' + errorCode + ' msg:' + errorMsg);
         localStorage.setItem('regErrorCode', errorCode);
         userCreationDialog('failed');
     })
@@ -114,7 +114,12 @@ function userCreationDialog(stat){
     loadingDialog();
 
     //throw appropriate error message
-    if (err_msg === 'auth/invalid-email') eMsg.innerText = "This email is invalid";
+    if (err_msg === 'auth/invalid-email')
+        eMsg.innerText = "This email is invalid";
+    if (err_msg === 'auth/network-request-failed')
+        eMsg.innerText =
+        "Something went wrong... It seems that your internet connection is broken!";
+
 
     switch (stat) {
         case 'success':

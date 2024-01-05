@@ -126,8 +126,7 @@ function LearnerInputs (){
                     It seems like this email has already been registered!
                     <br/>
                     <br/>
-                    If it hasn't, check that your internet connection is working,
-                    and that your email address is correct.
+                    If it hasn't, please check that your email address is correct.
                     </span>
                     <br/>
                     <br/>
