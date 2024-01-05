@@ -5,6 +5,7 @@
 // Import needed functions from required SDKs
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import '../styles/sign_up.css'
 
 import {    getAuth,
             createUserWithEmailAndPassword,
@@ -69,8 +70,7 @@ const actionCodeSettings = {
 export function newLearner(email, password, regName){
     createUserWithEmailAndPassword(auth, email, password)
     .then((credentials) => {
-        console.log(credentials);
-        console.log('all above');
+        // console.log(credentials);
         const learner = credentials.user;
         const uid = learner.uid;
         console.log(uid);
@@ -82,15 +82,35 @@ export function newLearner(email, password, regName){
     })
     .then(()=> verifyLearnerEmail())
     // try this verify now, since I set up dynamic links
-    .then(()=> loginLearnerViaEmail())
-    .then(()=> updateDisplayName(regName))
-    // add a function that shows a dialog box
-    // add a function that saves these details to local storage
+    .then(()=> {
+        userCreationDialog('success');
+        localStorage.setItem('regName',regName);
+        })
     .catch((e)=>{
         const errorCode = e.code;
         const errorMsg = e.message;
         console.log('report create: ' + errorCode + ' ' + errorMsg);
+        userCreationDialog('failed');
     })
+}
+
+function userCreationDialog(stat){
+    const success_dialog = document.getElementsByClassName('success')[0];
+    const fail_dialog = document.getElementsByClassName('failed')[0];
+    const user_id = document.querySelector('#reg');
+    user_id.innerText = localStorage.getItem('regName');
+
+    switch (stat) {
+        case 'success':
+            success_dialog.classList.add('expand_dialog');
+            break;
+        case 'failed':
+            fail_dialog.classList.add('expand_dialog');
+            break;
+        default:
+            console.log('creation outcome handled');
+            break;
+    }
 }
 
 /**********************/
@@ -106,16 +126,34 @@ export function verifyLearnerEmail(){
 
 /*********************/
 /*Update display name*/
-function updateDisplayName(x){
+export function updateDisplayName(x){
     const user = auth.currentUser;
     updateProfile(user, {displayName: `${x}`})
     .then(
         ()=>console.log(`successfully set displayName to ${user.displayName}`)
     )
+    console.log(user);
+}
+
+// learner details
+export function infoLearner(){
+    try {
+        const learner = auth.currentUser;
+        const learnerName = learner.displayName;
+        const email = learner.email;
+        const pixLink = learner.photoURL;
+        const isVerified = learner.emailVerified;
+        const uid = learner.uid;
+        const learnerDetails = [learnerName, email, pixLink, isVerified, uid];
+        console.log(learnerDetails);
+        
+    } catch (error) {
+        console.log(error);        
+    }
 }
 
 /********/
-/*automatically login the created, current user*/
+/*automatically login the current user via email*/
 function loginLearnerViaEmail(){
     if (isSignInWithEmailLink(auth, window.location.href)) {
         let email = window.localStorage.getItem('emailForSignIn');
@@ -137,9 +175,8 @@ function loginLearnerViaEmail(){
 
 
 /*************/
-/*this differs from the above in that it is a standalone request for the sign in link
-to be sent to an existing user email*/
-/* it is not integrated into newLearner()*/
+/*this differs from the above in that it is a standalone request for
+the sign in link to be sent to an existing user email*/
 
 function loginWithEmail(email){
     sendSignInLinkToEmail(auth, email, actionCodeSettings)
@@ -185,19 +222,12 @@ export function logoutLearner(){
     .catch((e)=>console.log(e));
 }
 
-// learner details
-export function infoLearner(){
+
+export function learnerLoginStatus(){
     try{
         onAuthStateChanged(auth, (learner)=>{
             if (learner != null) {
-                const learnerName = learner.displayName;
-                const email = learner.email;
-                const pixLink = learner.photoURL;
-                const isVerified = learner.emailVerified;
-                const uid = learner.uid;
-                const learnerDetails = 
-                [learnerName, email, pixLink, isVerified, uid];
-                console.log(learnerDetails);  
+                console.log(`User: ${learner.displayName} is logged in`)  
             }
             else {
                 console.log('No info retrieved! It seems learner is logged out.');

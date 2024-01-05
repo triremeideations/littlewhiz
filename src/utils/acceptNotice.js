@@ -15,11 +15,15 @@ export function checkAwareness(){
 }
 
 export default function awareness(){
-    localStorage.setItem('noticeAware','set');
-
-    const notice = document.getElementsByClassName('notice')[0];
-    const gradic = document.getElementsByClassName('gradic')[0];
-    notice.classList.add('accepted');
-    gradic.classList.add('maximise');
+    try{
+        localStorage.setItem('noticeAware','set');
+        
+        const notice = document.getElementsByClassName('notice')[0];
+        const gradic = document.getElementsByClassName('gradic')[0];
+        notice.classList.add('accepted');
+        gradic.classList.add('maximise');
+    } catch{
+        // console.log('navigated off mainpage. targeting a subpage');
+    }
 }
 

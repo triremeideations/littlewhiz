@@ -54,6 +54,12 @@
     justify-content: center;
     /* background-color: #c0c0c038; */
 }
+.signup_frame label small{
+    color: red;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+
 .signup_frame input{
     margin-bottom: 15px;
     background-color: #c0c0c017;
@@ -80,11 +86,11 @@
     top: 5%;
     left: 5%;
     border-radius: 10px;
-    /* background-color: #c0c0c015; */
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     transform: scale(0);
-    transition: transform 1s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    /* font-weight: bold; */
 
     display: flex;
     align-items: center;
@@ -97,14 +103,13 @@
 }
 .dialog p {
     text-shadow: 
-    2px 5px 5px black;
+    2px 3px 5px black;
 }
 .dialog button{
     padding: 10px;
 }
 .dialog.success{
     background-color: rgba(50, 255, 50, 0.333);
-    transform: scale(1);
 }
 .dialog.failed{
     background-color: rgba(255, 50, 50, 0.333);
@@ -117,6 +122,7 @@
     color: greenyellow;
     text-shadow: 1px 1px 4px black;
 }
+
 .expand_dialog{
     transform: scale(1);
 }

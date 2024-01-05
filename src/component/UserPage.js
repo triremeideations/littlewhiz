@@ -4,7 +4,9 @@ import {
     loginWithGoogle, 
     forgotPassword,
     deleteLearner, 
-    verifyLearnerEmail} from "../engine/learner-worker";
+    verifyLearnerEmail,
+    updateDisplayName
+} from "../engine/learner-worker";
 
 const UserPage =()=>{
     return(
@@ -29,6 +31,9 @@ const UserPage =()=>{
             </button>
             <button onClick={()=>verifyLearnerEmail()} style={{padding: '5px'}}>
                 Verify Current User
+            </button>
+            <button onClick={()=>updateDisplayName('chuck')} style={{padding: '5px'}}>
+                Update display Name
             </button>
             <button onClick={()=>deleteLearner()} style={{padding: '5px'}}>
                 DELETE ACCOUNT
