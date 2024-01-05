@@ -98,8 +98,11 @@ function LearnerInputs (){
                 <h1>Hooray!</h1>
                 <br/>
                 <p> 
-                    Welcome, <span id='reg'></span>.
+                    Registration successful.<br/>
+                    A verification link has been sent to <span id='mail'></span>
                     <br/>
+                    <br/>
+                    Welcome, <span id='reg'></span>.
                     <br/>
                     You are officially a little whiz! <br/>
                     Get ready for loads of fun, games and learning.
@@ -119,11 +122,13 @@ function LearnerInputs (){
                 <h1>Oops!</h1>
                 <br/>
                 <p>
+                    <span id='eMsg'>
                     It seems like this email has already been registered!
                     <br/>
                     <br/>
                     If it hasn't, check that your internet connection is working,
                     and that your email address is correct.
+                    </span>
                     <br/>
                     <br/>
                     Please try again...
@@ -131,6 +136,7 @@ function LearnerInputs (){
                 <br/>
                 <button onClick={()=>window.location.reload()}>CLOSE</button>
             </div>
+            <div className='loading'></div>
         </div>
     </div>
   )

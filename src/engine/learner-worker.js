@@ -5,7 +5,7 @@
 // Import needed functions from required SDKs
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import '../styles/sign_up.css'
+import '../styles/sign_up.css';
 
 import {    getAuth,
             createUserWithEmailAndPassword,
@@ -42,9 +42,6 @@ const app = initializeApp(firebaseConfig);
 
 // authenticate
 const auth = getAuth(app);
-// const email = "triremesolutions@proton.me";
-// const password = "freedom";
-
 
 /*****************************/
 // littleWhiz User functions //
@@ -68,6 +65,7 @@ const actionCodeSettings = {
 
 // create new account 
 export function newLearner(email, password, regName){
+    loadingDialog();
     createUserWithEmailAndPassword(auth, email, password)
     .then((credentials) => {
         // console.log(credentials);
@@ -83,22 +81,40 @@ export function newLearner(email, password, regName){
     .then(()=> verifyLearnerEmail())
     // try this verify now, since I set up dynamic links
     .then(()=> {
-        userCreationDialog('success');
         localStorage.setItem('regName',regName);
+        localStorage.setItem('regMail',email);
+        userCreationDialog('success');
         })
     .catch((e)=>{
         const errorCode = e.code;
-        const errorMsg = e.message;
-        console.log('report create: ' + errorCode + ' ' + errorMsg);
+        // const errorMsg = e.message;
+        // console.log('report create: ' + errorCode + ' msg:' + errorMsg);
+        localStorage.setItem('regErrorCode', errorCode);
         userCreationDialog('failed');
     })
+}
+
+export function loadingDialog(){
+    const loading_dialog = document.getElementsByClassName('loading')[0];
+    loading_dialog.classList.toggle('loadscreen');
+    // console.log('catch me if you can!');
 }
 
 function userCreationDialog(stat){
     const success_dialog = document.getElementsByClassName('success')[0];
     const fail_dialog = document.getElementsByClassName('failed')[0];
     const user_id = document.querySelector('#reg');
+    const user_email = document.querySelector('#mail');
+    const eMsg = document.querySelector('#eMsg');
     user_id.innerText = localStorage.getItem('regName');
+    user_email.innerText = localStorage.getItem('regMail');
+    const err_msg = localStorage.getItem('regErrorCode');
+
+    //disable loading screen
+    loadingDialog();
+
+    //throw appropriate error message
+    if (err_msg === 'auth/invalid-email') eMsg.innerText = "This email is invalid";
 
     switch (stat) {
         case 'success':
