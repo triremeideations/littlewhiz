@@ -61,11 +61,11 @@
 }
 
 .signup_frame input{
-    margin-bottom: 15px;
+    /* margin-bottom: 5px; */
     background-color: #c0c0c017;
     border: 0px solid transparent;
     border-bottom: 1px solid black;
-    padding: 5px;
+    /* padding: 5px; */
 }
 .signup_frame button{
     padding: 10px;
@@ -74,7 +74,11 @@
 }
 
 .side_frame{
-    background-color: rosybrown;
+    /* background-color: rosybrown; */
+    background-image: url('/public/img/stby_0.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /*dialog boxes to alert user*/

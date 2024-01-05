@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import '../styles/sign_up.css';
 import { newLearner } from './learner-worker.js';
 
-function LearnerInputs (){
+function LearnerCreate (){
 
         const [formData, setFormData] = useState(
             {
                 username: '',
                 email: '',
                 password: '',
+                retypePassword: '',
             }
         )
        
@@ -24,7 +25,11 @@ function LearnerInputs (){
         const handleSubmit=(e)=>{
             e.preventDefault();
             const passWd = document.querySelector('#passWd');
-            if(formData.password.length < 6) passWd.style.opacity='1'
+            const rePassWd = document.querySelector('#rePassWd');
+            if(formData.password.length < 6)
+                passWd.style.opacity='1'
+            else if(formData.password !== formData.retypePassword)
+                rePassWd.style.opacity='1'
             else {
                 let tempReg = [];
                 tempReg.push({
@@ -47,7 +52,7 @@ function LearnerInputs (){
             <div className='signup_frame'>
                 <br/>
                 <h3>Create New Learner Profile</h3>
-                <br/><br/>
+                <br/>
                 <form onSubmit={handleSubmit}>
                     <label>
                         Username:
@@ -59,6 +64,7 @@ function LearnerInputs (){
                             onChange={handleChange}
                             required
                         />
+                        <br/>
                     </label><br/>
                     <label>
                         Email:
@@ -70,6 +76,7 @@ function LearnerInputs (){
                             onChange={handleChange}
                             required
                         />
+                        <br/>
                     </label><br/>
                     <label>
                         Password:
@@ -85,8 +92,23 @@ function LearnerInputs (){
                         <small id='passWd'>
                             password should be at least 7 characters long
                         </small>
-                    </label>
-                    <br/><br/>
+                    </label><br/>
+                    <label>
+                        Confirm Password:
+                        <br/>
+                        <input
+                            type='password'
+                            name='retypePassword'
+                            value={formData.retypePassword}
+                            onChange={handleChange}
+                            required
+                        />
+                        <br/>
+                        <small id='rePassWd'>
+                            passwords should match
+                        </small>
+                    </label><br/>
+                    <br/>
                     <button type='submit'>GO Champ!</button>
                 </form>
             </div>
@@ -141,4 +163,4 @@ function LearnerInputs (){
   )
 }
 
-export default LearnerInputs;
+export default LearnerCreate;
