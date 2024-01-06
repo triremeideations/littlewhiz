@@ -8,13 +8,16 @@ import PolicyPage from './component/PolicyPage';
 import LearnerCreate from './engine/learner-create';
 import LearnerLogin from './engine/learner-login';
 import LearnerReset from './engine/learner-reset';
+import DashBoard from './component/DashBoard';
 
 
 const App=()=>{
+
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
+                <Route path="/dashboard" element={<DashBoard/>}/>
                 <Route path="/category" element={<SelectionPage/>}/>
                 <Route path="/ready" element={<BeginQuizzes/>}/>
                 <Route path="/new-learner" element={<LearnerCreate/>}/>

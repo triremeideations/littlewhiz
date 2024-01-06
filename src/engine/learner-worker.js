@@ -71,22 +71,12 @@ const actionCodeSettings = {
 export function newLearner(email, password, regName){
     loadingDialog();
     createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-        // console.log(credentials);
-        // const learner = credentials.user;
-        // const uid = learner.uid;
-        // console.log(uid);
-        // console.log('new Learner account successfully created!');
-        // set localstorage to ensure the next step to login is
-        // carried out with same email
-        // preventing logging a different device
-        window.localStorage.setItem('emailForSignIn', email);
-    })
     .then(()=> verifyLearnerEmail())
     // try this verify now, since I set up dynamic links
     .then(()=> {
         localStorage.setItem('regName',regName);
         localStorage.setItem('regMail',email);
+        localStorage.setItem('createNew','pending');
         userCreationDialog('success');
         })
     .catch((e)=>{
@@ -153,12 +143,15 @@ export function verifyLearnerEmail(){
 /*********************/
 /*Update display name*/
 export function updateDisplayName(x){
-    const user = auth.currentUser;
-    updateProfile(user, {displayName: `${x}`})
+    updateProfile(auth.currentUser, {displayName: `${x}`})
     .then(
-        ()=>console.log(`successfully set displayName to ${user.displayName}`)
+        ()=> {
+            // console.log(
+            // `successfully set displayName to ${auth.currentUser.displayName}`
+            // );
+            localStorage.setItem('createNew','completed');
+        }
     )
-    console.log(user);
 }
 
 // learner details
@@ -185,6 +178,11 @@ export function infoLearner(){
 /* Login existing user */
 // SIGN IN
 
+export function tempUser(m, temp, x){
+    signInWithEmailAndPassword(m, temp)
+    .catch(()=>{});
+}
+
 export function loginLearner(email, password){
     //enable loading screen
     loginProcessingDialog();
@@ -192,7 +190,12 @@ export function loginLearner(email, password){
         signInWithEmailAndPassword(auth, email, password)
         .then((credentials) => {
             const learner = credentials.user;
+            //fetch name from database and save in localstorage
             localStorage.setItem('dispName', learner.displayName);
+            //failsafe for if page reloads without user inititating it.
+            //or if user leaves creation in some way without finalising op.
+            localStorage.setItem('tempName', password);
+            localStorage.setItem('tempMail', email);
             userLoginDialog('success');
         })
         .catch((e)=>{
@@ -366,12 +369,15 @@ export function logoutLearner(){
     .catch((e)=>console.log(e));
 }
 
+/**************************************/
+/**************************************/
 
 export function learnerLoginStatus(){
     try{
         onAuthStateChanged(auth, (learner)=>{
             if (learner != null) {
-                console.log(`User: ${learner.displayName} is logged in`)  
+                console.log(`User: ${learner.displayName} is logged in`);
+                console.log(`ID: ${learner.uid} is logged in`);
             }
             else {
                 console.log('No info retrieved! It seems learner is logged out.');

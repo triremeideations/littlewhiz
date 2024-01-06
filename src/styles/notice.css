@@ -6,14 +6,24 @@
     background-size: contain;
 }
 
-.notice {
+.notice,
+.notice_login {
+    background-color: black;
+    color: white;
+}
+.notice_resol{
+    background: var(--skyfall);
+    color: black;
+    opacity: 0.9;
+}
+.notice,
+.notice_resol,
+.notice_login {
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     height: 100vh;
-    background-color: black;
-    color: white;
     font-family: 'cagliostro','nunito', sans-serif;
     z-index: 100;
 
@@ -26,7 +36,9 @@
     text-align: justify;
     padding: 10%;
 }
-.notice button {
+.notice button,
+.notice_resol button,
+.notice_login button {
     padding: 10px;
     cursor: pointer;
     background-color: transparent;
@@ -36,9 +48,15 @@
 
     pointer-events: all;
 }
-.notice button:hover {
+.notice button:hover,
+.notice_resol button:hover,
+.notice_login button:hover {
     color: black;
     background-color: goldenrod;
+    border: 1px solid black;
+}
+.notice_resol button {
+    color: black;
     border: 1px solid black;
 }
 .nullify {
@@ -53,4 +71,10 @@
     pointer-events: none;
     z-index: -99;
     transition: 2s;
+}
+
+@media only screen and (min-width: 600px){
+    .notice_resol {
+        display: none;
+    }
 }

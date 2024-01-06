@@ -1,15 +1,3 @@
-* {
-    --skyfall:
-        linear-gradient(
-            rgb(7, 65, 238),
-            rgb(0, 102, 255) 10%,
-            rgb(0, 179, 255),
-            rgb(255, 128, 149) 80%,
-            rgb(224, 123, 140),
-            pink
-        );
-}
-
 .backdrop {
     position: absolute;
     top: 0;

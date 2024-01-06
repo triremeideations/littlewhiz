@@ -117,10 +117,10 @@ function LearnerCreate (){
             </div>
 
             <div className='dialog success'>
-                <h1>Hooray!</h1>
+                <h1>Hurray!</h1>
                 <br/>
                 <p> 
-                    Registration successful.<br/>
+                    Registration successful!<br/>
                     A verification link has been sent to <span id='mail'></span>
                     <br/>
                     <br/>

@@ -6,6 +6,7 @@ import '../styles/quibbleModes.css'
 import homework from '../utils/home';
 import FooterSub from '../subcomponent/FooterSub';
 
+
 function HomePage(){
 
     useEffect(()=>{
