@@ -3,6 +3,7 @@ import HomePage from './component/HomePage';
 import SelectionPage from './component/SelectionPage';
 import BeginQuizzes from './component/QuizPage';
 import UserPage from './component/UserPage';
+import NoPage from './component/NoPage';
 import PolicyPage from './component/PolicyPage';
 import LearnerCreate from './engine/learner-create';
 import LearnerLogin from './engine/learner-login';
@@ -21,7 +22,7 @@ const App=()=>{
                 <Route path="/learner-reset" element={<LearnerReset/>}/>
                 <Route path="/privacy-policy" element={<PolicyPage/>}/>
                 <Route path="/harshControls" element={<UserPage/>}/>
-                <Route path="*" element={<HomePage/>}/>
+                <Route path="*" element={<NoPage/>}/>
             </Routes>
         </BrowserRouter>
     );
