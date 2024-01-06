@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/sign_up.css';
-import { newLearner } from './learner-worker.js';
+import { newLearner, updateDisplayName } from './learner-worker.js';
 
 function LearnerCreate (){
 
@@ -137,7 +137,11 @@ function LearnerCreate (){
                 </p>
                 
                 <a href='/'>
-                    <button>Go to Dashboard</button>
+                    <button onClick={()=>{
+                        updateDisplayName(localStorage.getItem('regName'))
+                    }}>
+                        Go to Dashboard
+                    </button>
                 </a>
             </div>
             <div className='dialog failed'>

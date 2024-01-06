@@ -85,7 +85,7 @@ function HomePage(){
                     <a href='/new-learner'>
                         <button> Sign UP! </button>
                     </a>
-                    <a href='/login'>
+                    <a href='/learner-login'>
                         <button> Sign IN! </button>
                     </a>
                     <a href='/new-learner'>

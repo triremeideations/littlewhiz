@@ -5,6 +5,8 @@ import BeginQuizzes from './component/QuizPage';
 import UserPage from './component/UserPage';
 import PolicyPage from './component/PolicyPage';
 import LearnerCreate from './engine/learner-create';
+import LearnerLogin from './engine/learner-login';
+import LearnerReset from './engine/learner-reset';
 
 
 const App=()=>{
@@ -14,9 +16,11 @@ const App=()=>{
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/category" element={<SelectionPage/>}/>
                 <Route path="/ready" element={<BeginQuizzes/>}/>
-                <Route path="/login" element={<UserPage/>}/>
                 <Route path="/new-learner" element={<LearnerCreate/>}/>
+                <Route path="/learner-login" element={<LearnerLogin/>}/>
+                <Route path="/learner-reset" element={<LearnerReset/>}/>
                 <Route path="/privacy-policy" element={<PolicyPage/>}/>
+                <Route path="/harshControls" element={<UserPage/>}/>
                 <Route path="*" element={<HomePage/>}/>
             </Routes>
         </BrowserRouter>

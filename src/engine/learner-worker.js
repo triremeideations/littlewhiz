@@ -6,6 +6,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import '../styles/sign_up.css';
+import '../styles/sign_in.css';
+import '../styles/sign_reset.css';
 
 import {    getAuth,
             createUserWithEmailAndPassword,
@@ -62,17 +64,19 @@ const actionCodeSettings = {
     dynamicLinkDomain: 'littlewhizlearner.page.link'
 };
 
+/********************/
+// create new account
+// SIGN UP
 
-// create new account 
 export function newLearner(email, password, regName){
     loadingDialog();
     createUserWithEmailAndPassword(auth, email, password)
-    .then((credentials) => {
+    .then(() => {
         // console.log(credentials);
-        const learner = credentials.user;
-        const uid = learner.uid;
-        console.log(uid);
-        console.log('new Learner account successfully created!');
+        // const learner = credentials.user;
+        // const uid = learner.uid;
+        // console.log(uid);
+        // console.log('new Learner account successfully created!');
         // set localstorage to ensure the next step to login is
         // carried out with same email
         // preventing logging a different device
@@ -94,7 +98,7 @@ export function newLearner(email, password, regName){
     })
 }
 
-export function loadingDialog(){
+function loadingDialog(){
     const loading_dialog = document.getElementsByClassName('loading')[0];
     loading_dialog.classList.toggle('loadscreen');
     // console.log('catch me if you can!');
@@ -106,6 +110,7 @@ function userCreationDialog(stat){
     const user_id = document.querySelector('#reg');
     const user_email = document.querySelector('#mail');
     const eMsg = document.querySelector('#eMsg');
+    //these getitems must come after the definitions, not before. 
     user_id.innerText = localStorage.getItem('regName');
     user_email.innerText = localStorage.getItem('regMail');
     const err_msg = localStorage.getItem('regErrorCode');
@@ -172,6 +177,140 @@ export function infoLearner(){
         console.log(error);        
     }
 }
+/**************************/
+/**************************/
+
+/*********************************/
+/*********************************/
+/* Login existing user */
+// SIGN IN
+
+export function loginLearner(email, password){
+    //enable loading screen
+    loginProcessingDialog();
+    try {
+        signInWithEmailAndPassword(auth, email, password)
+        .then((credentials) => {
+            const learner = credentials.user;
+            localStorage.setItem('dispName', learner.displayName);
+            userLoginDialog('success');
+        })
+        .catch((e)=>{
+            const errorCode = e.code;
+            const errorMsg = e.message;
+            console.log('report login: ' + errorCode + ' msg:' + errorMsg);
+            localStorage.setItem('loginErrorCode', errorCode);
+            userLoginDialog('failed');
+        });
+    } catch(e){
+        console.warn(e);
+        console.log('user is not logged in');    
+    }
+}
+
+function loginProcessingDialog(){
+    const login_procDiag = document.getElementsByClassName('login-load')[0];
+    login_procDiag.classList.toggle('loadingscreen');
+}
+
+function userLoginDialog(stat){
+    const lgPass_dialog = document.getElementsByClassName('login-pass')[0];
+    const lgFail_dialog = document.getElementsByClassName('login-fail')[0];
+    const legrMsg = document.querySelector('#lgerMsg');
+    const lgName = document.querySelector('#logName');
+    lgName.innerText = localStorage.getItem('dispName');
+
+    const err_msg = localStorage.getItem('loginErrorCode');
+
+    //disable loading screen
+    loginProcessingDialog();
+
+    //throw appropriate error message
+    if (err_msg === 'auth/invalid-credential')
+        legrMsg.innerText = "Your email-password combination is not recognised.";
+    if (err_msg === 'auth/network-request-failed')
+        legrMsg.innerText =
+        "It seems that your internet connection is broken!";
+
+
+    switch (stat) {
+        case 'success':
+            lgPass_dialog.classList.add('expand_loginDialog');
+            break;
+        case 'failed':
+            lgFail_dialog.classList.add('expand_loginDialog');
+            break;
+        default:
+            console.log('login outcome handled');
+            break;
+    }
+}
+/*****************************/
+/*****************************/
+
+
+/************************************/
+/* Reset password for existing user */
+
+// password reset
+export function forgotPassword(email){
+    resetProcessingDialog();
+    // loading screen
+    sendPasswordResetEmail(auth, email)
+    .then(()=> userResetDialog('success'))
+    .catch((e)=>{
+        const errorCode = e.code;
+        const errorMsg = e.message;
+        console.log('report create: ' + errorCode + ' msg:' + errorMsg);
+        localStorage.setItem('resetErrorCode', errorCode);
+        userResetDialog('failed');
+        }
+    )    
+    
+}
+
+function resetProcessingDialog(){
+    const reset_procDiag = document.getElementsByClassName('reset-load')[0];
+    reset_procDiag.classList.toggle('resetLoadScreen');
+}
+
+function userResetDialog(stat){
+    const resetPass_dialog = document.getElementsByClassName('reset-pass')[0];
+    const resetFail_dialog = document.getElementsByClassName('reset-fail')[0];
+    const resErrMsg = document.querySelector('#resetErrMsg');
+    
+    //fetch error codes/messages
+    const err_msg = localStorage.getItem('resetErrorCode');
+
+    //disable loading screen
+    resetProcessingDialog();
+
+    //throw appropriate error message
+    if (err_msg === 'auth/invalid-email')
+        resErrMsg.innerText = "This is not a valid email.";
+    if (err_msg === 'auth/invalid-credential')
+        resErrMsg.innerText = "This email is not registered.";
+    if (err_msg === 'auth/network-request-failed')
+        resErrMsg.innerText =
+        "It seems that your internet connection is broken!";
+
+
+    switch (stat) {
+        case 'success':
+            resetPass_dialog.classList.add('expand_resetDialog');
+            break;
+        case 'failed':
+            resetFail_dialog.classList.add('expand_resetDialog');
+            break;
+        default:
+            console.log('reset outcome handled');
+            break;
+    }
+}
+
+
+/************************************/
+/************************************/
 
 /********/
 /*automatically login the current user via email*/
@@ -215,25 +354,9 @@ function loginWithEmail(email){
 /*********************/
 
 
-// sign in
-export function loginLearner(email, password){
-    try {
-        signInWithEmailAndPassword(auth, email, password)
-        .then((credentials) => {
-            const learner = credentials.user;
-            const uid = learner.uid;
-            console.log('learner successfully logged in!');
-        })
-        .catch((e)=>{
-            console.log(e);
-            console.log('wrong email or password');
-        });
-    } catch(e){
-        console.warn(e);
-        console.log('user is not logged in');    
-    }
-}
 
+
+/***********************/
 // sign out
 export function logoutLearner(){
     signOut(auth)
@@ -257,15 +380,7 @@ export function learnerLoginStatus(){
     } catch(e){console.log(e)};
 }
 
-// password reset
-export function forgotPassword(email){
-    try {
-        sendPasswordResetEmail(auth, email)
-        .then(console.log('prompt user to check email'));
-    } catch (e) {
-        console.log(e);
-    }
-}
+
 
 
 /********************/
