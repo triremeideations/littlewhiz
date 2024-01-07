@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { learnerLoginStatus } from '../engine/learner-worker';
+import { learnerLoginStatus, refreshDashboard } from '../engine/learner-worker';
 import shouldRender from '../utils/dashings';
 import '../styles/dashings.css';
 import { content } from '../utils/dashings';
@@ -8,6 +8,7 @@ const DashBoard = () => {
     learnerLoginStatus();
     
     useEffect(()=>{
+        refreshDashboard();
         shouldRender('#dash','#dish');
         content();
     },[]);

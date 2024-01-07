@@ -391,6 +391,18 @@ export function learnerLoginStatus(){
     } catch(e){console.log(e)};
 }
 
+export const refreshDashboard=()=>{
+    const gippy = localStorage.getItem('viaExternal');
+    if (gippy === 'true'){
+        localStorage.removeItem('viaExternal');
+        window.location.reload();
+    }
+}
+export const goToDashboard=()=>{
+    localStorage.setItem('viaExternal','true');
+    window.location.replace('/dashboard');
+}
+
 /********************/
 /**GOOGLE SIGN-in ***/
 

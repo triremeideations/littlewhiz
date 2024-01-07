@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/sign_in.css';
-import { loginLearner } from './learner-worker.js';
+import { goToDashboard, loginLearner } from './learner-worker.js';
 
 function LearnerLogin (){
 
@@ -88,10 +88,11 @@ function LearnerLogin (){
                         Quibble.
                         <br/><br/>
                     </p>
+
+                    <button onClick={()=>goToDashboard()}>
+                        Go to Dashboard
+                    </button>
                     
-                    <a href='/dashboard'>
-                        <button>Go to Dashboard</button>
-                    </a>
                 </div>
                 <div className='loginDialog login-fail'>
                     <h1>Oops!</h1>

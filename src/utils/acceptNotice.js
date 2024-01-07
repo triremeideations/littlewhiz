@@ -1,5 +1,6 @@
 import '../styles/notice.css';
 import {
+    goToDashboard,
     // learnerLoginStatus,
     updateDisplayName } from '../engine/learner-worker';
 
@@ -65,7 +66,7 @@ export function endProcess(){
                 gradic.classList.add('maximise');
             } catch {}
             notice_login.classList.add('accepted');
-            window.location.assign('/dashboard');
+            goToDashboard();
         }
     }
 }
