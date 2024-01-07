@@ -5,6 +5,7 @@ import '../styles/footer.css'
 import '../styles/quibbleModes.css'
 import homework from '../utils/home';
 import FooterSub from '../subcomponent/FooterSub';
+import { loginWithGoogle } from '../engine/learner-worker';
 
 
 function HomePage(){
@@ -89,9 +90,11 @@ function HomePage(){
                     <a href='/learner-login'>
                         <button> Sign IN! </button>
                     </a>
-                    <a href='/new-learner'>
-                        <button> Sign in with Google... </button>
-                    </a>
+                    <br/>
+                    <button onClick={ loginWithGoogle }>
+                        Sign in with Google...
+                    </button>
+                    
                 </div>
             </div>
             <footer>

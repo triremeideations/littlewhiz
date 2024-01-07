@@ -481,3 +481,16 @@
     color: black;
     transition: background-color 1s ease;
 }
+
+#extra2 button {
+    color: white;
+    background-color: royalblue;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.7s ease;
+    border-radius: 5px;
+}
+#extra2 button:hover{
+    color: black;
+    background-color: yellowgreen;
+}

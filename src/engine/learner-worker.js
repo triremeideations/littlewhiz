@@ -376,18 +376,19 @@ export function learnerLoginStatus(){
     try{
         onAuthStateChanged(auth, (learner)=>{
             if (learner != null) {
-                console.log(`User: ${learner.displayName} is logged in`);
-                console.log(`ID: ${learner.uid} is logged in`);
+                localStorage.setItem('currentProfileName', learner.displayName);
+                localStorage.setItem('currentProfileUID', learner.uid);
+                localStorage.setItem('learnerSignedIn','yes');
+                // console.log(localStorage.getItem('currentProfileName'));
+                // console.log(localStorage.getItem('currentProfileUID'));
             }
             else {
-                console.log('No info retrieved! It seems learner is logged out.');
+                localStorage.setItem('learnerSignedIn','no');
+                // console.log('No info retrieved! It seems learner is logged out.');
             }
         })
     } catch(e){console.log(e)};
 }
-
-
-
 
 /********************/
 /**GOOGLE SIGN-in ***/
