@@ -382,6 +382,7 @@ export function learnerLoginStatus(){
                 localStorage.setItem('learnerSignedIn','yes');
                 // console.log(localStorage.getItem('currentProfileName'));
                 // console.log(localStorage.getItem('currentProfileUID'));
+                refreshDashboard();
             }
             else {
                 localStorage.setItem('learnerSignedIn','no');
@@ -392,10 +393,12 @@ export function learnerLoginStatus(){
 }
 
 export const refreshDashboard=()=>{
-    const gippy = localStorage.getItem('viaExternal');
-    if (gippy === 'true'){
-        localStorage.removeItem('viaExternal');
-        window.location.reload();
+    if (localStorage.getItem('viaExternal') !== null){
+        const gippy = localStorage.getItem('viaExternal');
+        if (gippy === 'true'){
+            localStorage.removeItem('viaExternal');
+            window.location.reload();
+        }
     }
 }
 export const goToDashboard=()=>{
