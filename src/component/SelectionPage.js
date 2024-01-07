@@ -1,5 +1,5 @@
 import '../styles/selectionPage.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { quibblePos, categoryList } from '../data/populateData';
 import { flight_mechanics, presentStart, proceed} from '../utils/utils';
@@ -7,9 +7,13 @@ import SelectionIntro from '../subcomponent/SelectionIntro';
 import SelectionOutro from '../subcomponent/SelectionOutro';
 import PrepDialogBox from '../subcomponent/PrepDialog';
 import ResolutionPrompt from '../subcomponent/Resolution';
+import shouldRender from '../utils/dashings';
 
 
 function SelectionPage() {
+  useEffect(()=>{
+    shouldRender('#categMain','#logPrompt');
+  })
 
   const [qPos, setQPos] = useState(1);
   const [choices, setChoices] = useState(categoryList);
@@ -43,21 +47,29 @@ function SelectionPage() {
   }
 
   return (
-    <div className='frame'>
-      <SelectionOutro
-        choices={choices}
-        handleMultiSelect={handleMultiSelect}
-        proceed={proceed}
-      />
+    <div>
+      <div className='login_wall' id='logPrompt'>
+          <div>
+              <h1>You must be logged in to access this page!</h1>
+          </div>
+      </div>
 
-      <SelectionIntro
-        categoryList={categoryList}
-        handleSingleSelect={handleSingleSelect}
-        presentStart={presentStart}
-      />
+      <div className='frame' id='categMain'>
+        <SelectionOutro
+          choices={choices}
+          handleMultiSelect={handleMultiSelect}
+          proceed={proceed}
+        />
 
-      <PrepDialogBox/>
-      <ResolutionPrompt/>
+        <SelectionIntro
+          categoryList={categoryList}
+          handleSingleSelect={handleSingleSelect}
+          presentStart={presentStart}
+        />
+
+        <PrepDialogBox/>
+        <ResolutionPrompt/>
+      </div>
     </div>
   );
 }

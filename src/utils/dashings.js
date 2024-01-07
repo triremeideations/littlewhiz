@@ -1,7 +1,7 @@
-export default function shouldRender(){
+export default function shouldRender(x,y){
     const status = localStorage.getItem('learnerSignedIn');
-    const gbas = document.querySelector('#dash');
-    const gbos = document.querySelector('#dish');
+    const gbas = document.querySelector(x);
+    const gbos = document.querySelector(y);
     if (status !== null){
         if (status === 'yes'){
             gbos.style.display = 'none';

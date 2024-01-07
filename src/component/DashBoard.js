@@ -8,7 +8,7 @@ const DashBoard = () => {
     learnerLoginStatus();
     
     useEffect(()=>{
-        shouldRender();
+        shouldRender('#dash','#dish');
         content();
     })
 
