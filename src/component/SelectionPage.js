@@ -13,7 +13,7 @@ import shouldRender from '../utils/dashings';
 function SelectionPage() {
   useEffect(()=>{
     shouldRender('#categMain','#logPrompt');
-  })
+  },[]);
 
   const [qPos, setQPos] = useState(1);
   const [choices, setChoices] = useState(categoryList);

@@ -135,14 +135,12 @@ function LearnerCreate (){
                     Quibble.
                     <br/><br/>
                 </p>
-                
-                <a href='/'>
-                    <button onClick={()=>{
-                        updateDisplayName(localStorage.getItem('regName'))
+                <button onClick={()=>{
+                    updateDisplayName(localStorage.getItem('regName'));
+                    window.location.assign('/dashboard');
                     }}>
                         Go to Dashboard
-                    </button>
-                </a>
+                </button>
             </div>
             <div className='dialog failed'>
                 <h1>Oops!</h1>
