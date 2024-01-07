@@ -113,6 +113,7 @@
 .dialog button{
     padding: 10px;
     background-color: rosybrown;
+    color: black;
 }
 .dialog.success{
     background-color: rgba(50, 255, 50, 0.333);

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/sign_up.css';
-import { newLearner, updateDisplayName } from './learner-worker.js';
+import { 
+    newLearner, 
+    // updateDisplayName 
+    } from './learner-worker.js';
 
 function LearnerCreate (){
 
@@ -135,12 +138,15 @@ function LearnerCreate (){
                     Quibble.
                     <br/><br/>
                 </p>
-                <button onClick={()=>{
-                    updateDisplayName(localStorage.getItem('regName'));
-                    window.location.assign('/dashboard');
-                    }}>
-                        Go to Dashboard
+                <a href='/'>
+                <button 
+                    // onClick={()=>{
+                    // updateDisplayName(localStorage.getItem('regName'));
+                    // }}
+                >
+                    HOME
                 </button>
+                </a>
             </div>
             <div className='dialog failed'>
                 <h1>Oops!</h1>

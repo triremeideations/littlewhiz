@@ -77,6 +77,7 @@ export function newLearner(email, password, regName){
         localStorage.setItem('regName',regName);
         localStorage.setItem('regMail',email);
         localStorage.setItem('createNew','pending');
+                //this is resolved in updateDisplayName
         userCreationDialog('success');
         })
     .catch((e)=>{
