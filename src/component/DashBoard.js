@@ -10,7 +10,7 @@ const DashBoard = () => {
     useEffect(()=>{
         shouldRender('#dash','#dish');
         content();
-    })
+    },[]);
 
     return (
         <div id='chip'>

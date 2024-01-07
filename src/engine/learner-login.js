@@ -89,7 +89,7 @@ function LearnerLogin (){
                         <br/><br/>
                     </p>
                     
-                    <a href='/'>
+                    <a href='/dashboard'>
                         <button>Go to Dashboard</button>
                     </a>
                 </div>
