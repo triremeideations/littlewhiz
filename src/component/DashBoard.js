@@ -1,5 +1,10 @@
-import React, { useEffect } from 'react';
-import { learnerLoginStatus } from '../engine/learner-worker';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { 
+    learnerLoginStatus,
+    logoutLearner
+    } from '../engine/learner-worker';
+
 import shouldRender from '../utils/dashings';
 import '../styles/dashings.css';
 import { content } from '../utils/dashings';
@@ -15,26 +20,47 @@ const DashBoard = () => {
     return (
         <div id='chip'>
             <div className='panel' id='dash'>
-                <div>
-                    <h1>
-                        <span id='nametag'/>'s <br/>
-                        Dashboard.
-                    </h1>
+                <div className='subPanel'>
+                    <div>
+                        <h1>
+                            <span id='nametag'/>'s <br/>
+                            Dashboard.
+                        </h1>
+                    </div>
+                    <div>
+                        <button onClick={ logoutLearner }>
+                            Sign Out
+                        </button>
+                        &nbsp;
+                        <Link to={"/delete"}>
+                            <button>
+                                Delete Account
+                            </button>
+                        </Link>
+                    </div>
                 </div>
-                <div>
-                    <a href='/category'>
+
+                <div className='subPanel' id='to_category'>
+                    <Link to={'/category'}>
                     <button>
                         Go to Category Select...
                     </button>
-                    </a>
+                    </Link>
                 </div>
-                <div>
-                    
+
+                <div className='subPanel' id="stats">
+                    <br/>
+                    <h2>Your Stats</h2>
+                    <h5>Stats ---A</h5>
+                    <h5>Stats ---B</h5>
+                    <h5>Stats ---C</h5>
+                    <br/>
+                    <h5>Some more stats -----</h5>
                 </div>
             </div>
 
             <div className='panel' id='dish'>
-                <div>
+                <div className='login_warn'>
                     <h1>You must be logged in to access this page!</h1>
                 </div>
             </div>

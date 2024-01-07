@@ -1,5 +1,6 @@
 export default function shouldRender(x,y){
     const status = localStorage.getItem('learnerSignedIn');
+        //storage is written to by loginstatus fxn
     const gbas = document.querySelector(x);
     const gbos = document.querySelector(y);
     if (status !== null){

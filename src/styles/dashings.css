@@ -13,7 +13,13 @@
     }
 }
 
-.panel div{
+.panel button{
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+}
+
+.subPanel {
     height: 100%;
     width: 100%;
     border: 2px solid silver;
@@ -23,27 +29,18 @@
     -webkit-backdrop-filter: blur(3px);
 
     display: flex;
+    gap: 2%;
+    flex-direction: column;
 }
-.panel div:nth-of-type(2){
-    border-color: transparent;
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-
+.subPanel div{
+    width: 100%;
+    height: 100%;
+    border: 2px solid silver;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.panel div button {
-    padding: 2rem;
-    color: black;
-    background-color: yellowgreen;
-    cursor: pointer;
-    transition: background-color 1s ease;
-}
-.panel div button:hover{
-    background-color: royalblue;
-    color: yellow;
-}
 
 #chip {
     position: relative;
@@ -63,6 +60,24 @@
     }
 }
 
+#to_category {
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    
+    align-items: center;
+    justify-content: center;
+}
+#to_category button {
+    background-color: yellowgreen;
+    color: black;
+}
+
+#stats{
+    box-sizing: border-box;
+    padding: 5%;
+}
+
 #dish {
     align-items: center;
     justify-content: center;
@@ -72,4 +87,15 @@
     justify-content: center;
     width: 85%;
     height: 25%;
+}
+
+.login_warn {
+    width: 80%;
+    height: 20%;
+    background-color: #c0c0c038;
+    border: 2px solid silver;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
