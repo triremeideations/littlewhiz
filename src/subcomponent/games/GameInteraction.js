@@ -6,14 +6,14 @@ import AbsQuest from './AbsQuest';
 const GameInteraction = ({ activeQuest, questSelect }) => {
 
     return (
-        <div>
-            <div>
+        <div id='gameinteraction'>
+            <div id='questionBox'>
                 { activeQuest === 1 && <VerbalQuest/> }
                 { activeQuest === 2 && <NumQuest/> }
                 { activeQuest === 3 && <LogicQuest/> }
                 { activeQuest === 4 && <AbsQuest/> }
             </div>
-            <div>
+            <div id='buttonBox'>
                 <button id='thisVerbal' onClick={()=>{
                     questSelect(1)
                 }}>

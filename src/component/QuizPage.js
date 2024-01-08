@@ -1,3 +1,4 @@
+import '../subcomponent/games/styles/game.css';
 import { useEffect, useState } from 'react';
 import { learnerLoginStatus } from '../engine/learner-worker';
 import shouldRender from '../utils/dashings';
@@ -8,7 +9,7 @@ const BeginQuizzes = () => {
   learnerLoginStatus();
     
   // useEffect(()=>{
-  //     shouldRender('#dash','#dish');
+  //     shouldRender('#sideA','#sideB');
   // },[]);
 
   const [activeQuest, setActiveQuest] = useState(null);
@@ -19,8 +20,8 @@ const BeginQuizzes = () => {
 
 
   return (
-    <div>
-        <div id='dash'>
+    <div id='questBackdrop'>
+        <div id='sideA'>
           <GameVisual/>
           <GameInteraction
             activeQuest = {activeQuest}
@@ -28,7 +29,7 @@ const BeginQuizzes = () => {
           />
         </div>
         
-        <div id='dish'>
+        <div id='sideB' style={{display: 'none'}}>
           <div>
             <h1>You must be logged in to access this page!</h1>
           </div>

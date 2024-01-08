@@ -2,7 +2,7 @@ import React from 'react'
 
 const GameVisual = () => {
   return (
-    <div>GameVisual</div>
+    <div id='gamevisual'>GameVisual</div>
   )
 }
 

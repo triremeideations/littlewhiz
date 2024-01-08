@@ -1,0 +1,73 @@
+#questBackdrop {
+    position: relative;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--skyfall);
+}
+
+#sideA,
+#sideB {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#sideB {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#sideA{
+    display: grid;
+    gap: 1%;
+    box-sizing: border-box;
+    padding: 1%;
+}
+
+@media only screen and (min-width: 600px){
+    #sideA{
+        grid-template-columns: 1fr 2fr;
+    }
+}
+@media only screen and (max-width: 599px){
+    #sideA{
+        grid-template-rows: 1fr 2fr;
+    }
+}
+
+#gamevisual{
+    background-color: red;
+}
+
+#gameinteraction{
+    background-color: green;
+    display: flex;
+    gap: 2%;
+}
+@media only screen and (max-width: 599px){
+    #gameinteraction {
+        flex-direction: column;
+    }
+}
+
+#questionBox,
+#buttonBox {
+    background-color: yellow;
+    width: 100%;
+    height: 100%;
+}
+
+#buttonBox{
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#buttonBox button {
+    width: 60%;
+    height: 20%;
+}
