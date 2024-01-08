@@ -4,6 +4,7 @@
     width: 100vw;
     height: 100vh;
     background: var(--skyfall);
+    background: url('/public/selBG_hi.png');
 }
 
 #sideA,
@@ -37,31 +38,24 @@
         grid-template-rows: 1fr 2fr;
     }
 }
-
-#gamevisual{
-    background-color: red;
-}
-
-/* #gameinteraction{
-    background-color: green;
-    display: flex;
-    gap: 2%;
-}
-@media only screen and (max-width: 599px){
-    #gameinteraction {
-        flex-direction: column;
+@media only screen and (min-width: 768px) and (min-height: 1024px){
+    #sideA{
+        grid-template-columns: 1fr;
     }
 }
 
+
+#gamevisual,
 #questionBox,
 #buttonBox {
-    background-color: yellow;
-    width: 100%;
-    height: 100%;
-} */
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 2px solid gold;
+    border-radius: 10px;
+}
 
 #gameinteraction{
-    background-color: green;
     display: grid;
     gap: 1%;
 }
@@ -77,11 +71,6 @@
     }
 }
 
-#questionBox,
-#buttonBox {
-    background-color: yellow;
-}
-
 #buttonBox{
     display: flex;
     flex-direction: column;
@@ -93,4 +82,17 @@
     width: 60%;
     height: 15%;
     cursor: pointer;
+    background-color: royalblue;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.5s ease;
+}
+#buttonBox button:hover{
+    background-color: greenyellow;
+    color: black;
+}
+
+#questDiv{
+    background-color: black;
 }

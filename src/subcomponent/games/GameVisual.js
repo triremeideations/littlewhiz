@@ -1,8 +1,10 @@
 import React from 'react'
 
-const GameVisual = () => {
+const GameVisual=()=>{
   return (
-    <div id='gamevisual'>GameVisual</div>
+    <div id='gamevisual'>
+      GameVisual
+    </div>
   )
 }
 
