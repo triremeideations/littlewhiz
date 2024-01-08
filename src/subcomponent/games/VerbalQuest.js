@@ -2,7 +2,7 @@ import React from 'react'
 
 const VerbalQuest = () => {
   return (
-    <div>VerbalQuest</div>
+    <div class='questDiv'>VerbalQuest</div>
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 const LogicQuest = () => {
   return (
-    <div>LogicQuest</div>
+    <div class='questDiv'>LogicQuest</div>
   )
 }
 

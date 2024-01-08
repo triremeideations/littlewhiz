@@ -25,12 +25,12 @@ const GameInteraction = ({ activeQuest, questSelect }) => {
                     Numeric
                 </button>
                 <button id='thisLogic' onClick={()=>{
-                    questSelect(2)
+                    questSelect(3)
                 }}>
                     Logic
                 </button>
                 <button id='thisAbstract' onClick={()=>{
-                    questSelect(2)
+                    questSelect(4)
                 }}>
                     Abstract
                 </button>

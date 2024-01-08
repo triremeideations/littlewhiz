@@ -42,7 +42,7 @@
     background-color: red;
 }
 
-#gameinteraction{
+/* #gameinteraction{
     background-color: green;
     display: flex;
     gap: 2%;
@@ -58,6 +58,28 @@
     background-color: yellow;
     width: 100%;
     height: 100%;
+} */
+
+#gameinteraction{
+    background-color: green;
+    display: grid;
+    gap: 1%;
+}
+
+@media only screen and (min-width: 600px){
+    #gameinteraction {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+@media only screen and (max-width: 599px){
+    #gameinteraction {
+        grid-template-rows: 1.5fr 1fr;
+    }
+}
+
+#questionBox,
+#buttonBox {
+    background-color: yellow;
 }
 
 #buttonBox{
@@ -69,5 +91,6 @@
 }
 #buttonBox button {
     width: 60%;
-    height: 20%;
+    height: 15%;
+    cursor: pointer;
 }
