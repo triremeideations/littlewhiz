@@ -96,3 +96,8 @@
 #questDiv{
     background-color: black;
 }
+#gamevisual{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

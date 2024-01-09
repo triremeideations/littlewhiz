@@ -1,0 +1,429 @@
+
+.gameframe {
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    /* background-color: red; */
+    box-sizing: border-box;
+}
+@media only screen and (max-width: 599px){
+    .gameframe{
+        transform: scale(0.3);
+    }
+}
+@media only screen and (max-width: 700px) and (max-height: 400px){
+    .gameframe{
+        transform: scale(0.6);
+    }
+}
+.backboard {
+    position: relative;
+    width: 77%;
+    height: 50%;
+    margin: auto;
+    background-color: rgb(200, 170, 120);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.floorboard{
+    position: relative;
+    top: -7%;
+    width: 100%;
+    height: 40%;
+    background: rgb(200, 150, 100);
+    transform: perspective(20px) rotateX(3deg);
+}
+
+@keyframes raiseWall {
+    10%{
+        opacity: 1;
+        top: 65%;
+    }
+    75%{
+        background: rgb(194, 150, 92);
+    }
+    80%{
+        background: yellowgreen;
+    }
+    100%{
+        width: 24%; 
+        height: 15%;
+        top: 56%;
+        left: 76%;
+        opacity: 1;
+        transform: skewY(68deg);
+        border-top-right-radius: 1rem;
+    }
+}
+
+.raiseWall{
+    animation: raiseWall 1.8s linear 0s 1 forwards normal;
+}
+
+
+.wall{
+    position: absolute;
+    width: 24%; height: 5%;
+    background-color: rgb(194, 150, 92);
+    top: 67%;
+    left: 76%;
+    transform: skewY(68deg);
+    border-top-right-radius: 1rem;
+    opacity: 0;
+}
+.dive{
+    display: inline-block;
+    position: relative;
+    top: 30%;
+    width: 45%;
+    text-align: center;
+    margin-left: 3%;
+
+    height: 2rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    background: rosybrown;
+    color: white;
+
+    opacity: 0.5;
+}
+.pitch, .res{
+    position: absolute;
+    top: 5%;
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    border: thin;
+    outline: none;
+    cursor: pointer;
+    box-shadow: grey 5px 5px 10px;
+    background-color: greenyellow;
+    font-size: 1.1rem;
+}
+.res{
+    display: none;
+}
+
+.pitch:active, .res:active{
+    transform: translateY(4px);
+    box-shadow: grey 5px 3px 2px;
+}
+
+.cube,
+.cubeTwo {
+    width: 3.75rem;
+    height: 3.75rem;
+    position: relative;
+    top: -60%;
+    left: 25%;
+    transform-style: preserve-3d;
+    transform: 
+        scale(0.7) translateX(0rem) translateY(0rem)
+        rotateX(60deg) rotateZ(20deg) rotateY(0deg);
+    float: left;
+    
+}
+.cubeTwo{
+    transform: 
+        scale(0.7) translateX(0rem) translateY(0rem)
+        rotateX(60deg) rotateZ(20deg) rotateY(60deg);
+    left: 35%;
+    animation: spin2 5s linear 0s infinite forwards;
+}
+
+.spin{
+    animation: spin 5s linear 0s infinite forwards;
+}
+
+@keyframes spin{
+    100%{
+        transform:
+            scale(0.7) translateX(0rem) translateY(0rem)
+            rotateX(60deg) rotateZ(380deg) rotateY(0deg);
+    }
+}
+
+.twill{
+    animation: twillDie 3s infinite linear 0s normal forwards; 
+}
+@keyframes twillDie{
+    50%{
+        transform: 
+            scale(0.7) translateX(0rem) translateY(0rem) 
+            rotateX(60deg) rotateZ(20deg) rotateY(120deg);
+    }
+    100%{
+        transform: 
+            scale(0.7) translateX(0rem) translateY(0rem) 
+            rotateX(60deg) rotateZ(20deg) rotateY(-290deg);
+    }
+}
+
+
+.throw{
+    animation: roll_a 4.5s linear 0s 1 forwards;
+}
+.throwTwo{
+    animation: roll_b 4.9s linear 0s 1 forwards;
+}
+
+/*****************/
+/*test*/
+.cube{
+    animation: roll_a 4.5s linear 0s 1 forwards;
+}
+.cubeTwo {
+    animation: roll_b 4.9s linear 0s 1 forwards;
+}
+/*****************/
+
+.side{
+    width: 100%;
+    height: 100%;
+    top: 0; left:0;
+    position: absolute;
+    border-radius: 10%;
+    text-align: center;
+    line-height: 2;
+    background: black;
+    color: white;
+}
+.one{
+    transform:
+        translateZ(30px);
+}
+.six{
+    transform:
+        translateZ(-30px) rotateZ(180deg) rotateY(180deg);
+}
+.two{
+    transform:
+        translateY(30px) rotateX(-90deg);
+}
+.five{
+    transform:
+        translateY(-30px) rotateX(-90deg) rotateY(180deg);
+}
+.three{
+    transform:
+        translateX(-30px) rotateX(-90deg) rotateY(-90deg);
+}
+.four{
+    transform:
+        translateX(30px) rotateX(-90deg) rotateY(90deg);
+}
+
+@keyframes roll_a{
+    0%{
+        transform:
+            scale(0.7) translateX(0rem) translateY(0rem)
+            rotateX(60deg) rotateZ(20deg) rotateY(0deg);
+    }
+    20%{
+        transform:
+            scale(0.2) translateY(-29rem) translateX(-5rem)
+            rotateX(-90deg) rotateZ(20deg) rotateY(-2deg);
+    }   
+    25%{
+        transform: 
+            scale(0.23) translateY(-27rem) translateX(-6rem)
+            rotateX(-600deg) rotateZ(-20deg) rotateY(20deg);
+    }
+    38%{
+        transform:
+            scale(0.3) translateY(-9rem) translateX(-10rem)
+            rotateX(300deg) rotateZ(37deg) rotateY(0deg);
+    }
+
+    50%{
+        transform: 
+            scale(0.3) translateY(9rem) translateX(-18rem)
+            rotateX(1080deg) rotateZ(50deg) rotateY(20deg);
+    }
+    53%{
+        transform: 
+            scale(0.29) translateY(11rem) translateX(-16rem)
+            rotateX(1080deg) rotateZ(260deg) rotateY(250deg);
+    }
+    55%{
+        transform:
+            scale(0.3) translateY(12rem) translateX(-12rem)
+            rotateX(1080deg) rotateZ(300deg) rotateY(290deg);
+    }
+    63%{
+        transform: 
+            scale(0.3) translateY(16rem) translateX(-6rem)
+            rotateX(1080deg) rotateZ(550deg) rotateY(490deg);
+    }
+    65%{
+        transform: 
+            scale(0.33) translateY(17rem) translateX(-6rem)
+            rotateX(180deg) rotateZ(510deg) rotateY(490deg);
+    }
+
+/*alternate version if bounce is desired-->*/ 
+/*replace 50-65%*/
+
+/* 50%{
+        transform:
+            scale(0.3) translateY(9rem) translateX(-18rem)
+            rotateX(200deg) rotateZ(0deg) rotateY(0deg);
+    }
+    53%{
+        transform:
+            scale(0.29) translateY(7rem) translateX(-16rem)
+            rotateX(0deg) rotateZ(200deg) rotateY(0deg);
+    }
+    55%{
+        transform: 
+            scale(0.3) translateY(7rem) translateX(-12rem) 
+            rotateX(180deg) rotateZ(0deg) rotateY(0deg);
+    }
+    60%{
+        transform: 
+            scale(0.3) translateY(14rem) translateX(-7rem) 
+            rotateX(0deg) rotateZ(200deg) rotateY(0deg);
+    }
+    65%{
+        transform: 
+            scale(0.3) translateY(19rem) translateX(-5rem)
+            rotateX(-400deg) rotateZ(0deg) rotateY(0deg);
+    } */
+
+/*do not alter from 70% !!!*/
+    70%{
+        transform: 
+            scale(0.4) translateY(18rem) translateX(-8rem)
+            rotateX(200deg) rotateZ(37deg) rotateY(0deg);
+        z-index: 3;
+    }
+    75%{
+        transform: 
+            scale(0.4) translateY(14rem) translateX(-8rem)
+            rotateX(-390deg) rotateZ(20deg) rotateY(-10deg);
+        z-index: 4;
+    }
+    88%{
+        transform: 
+            scale(0.7) translateY(16rem) translateX(-4rem)
+            rotateX(-1070deg) rotateZ(104deg) rotateY(-5deg);
+    }
+    89%{
+        transform: 
+            scale(0.7) translateY(18rem) translateX(-3rem)
+            rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+    }
+    100%{
+        transform: 
+            scale(1) translateY(19rem) translateX(-8rem)  
+            rotateX(-1225deg) rotateZ(504deg) rotateY(-5deg);
+    }
+    
+}
+@keyframes roll_b{
+    0%{
+        transform: 
+            scale(0.7) translateX(0rem) translateY(0rem) 
+            rotateX(60deg) rotateZ(0deg) rotateY(0deg);
+    }
+    15%{
+        transform: 
+            scale(0.2) translateY(-40rem) translateX(2rem) 
+            rotateX(-260deg) rotateZ(0deg) rotateY(0deg);
+    }
+    20%{
+        transform: 
+            scale(0.2) translateY(-25rem) translateX(2rem) 
+            rotateX(0deg) rotateZ(-360deg) rotateY(-720deg);
+        
+    }
+    30%{
+        transform: 
+            scale(0.2) translateY(15rem) translateX(24rem) 
+            rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+    }
+    35%{
+        transform: 
+            scale(0.25) translateY(27rem) translateX(6rem) 
+            rotateX(0deg) rotateZ(-3600deg) rotateY(720deg);
+    }
+    36%{
+        transform: 
+            scale(0.25) translateY(25rem) translateX(6.2rem) 
+            rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+    }
+    /*first impact*/
+    44%{
+        transform: 
+            scale(0.25) translateY(9rem) translateX(6rem) 
+            rotateX(-500deg) rotateZ(0deg) rotateY(72deg);
+    }
+    46.9%{
+        transform: 
+            scale(0.25) translateY(12rem) translateX(5rem) 
+            rotateX(0deg) rotateZ(0deg) rotateY(144deg);
+    }
+/*first downward rebound*/
+    47%{
+        transform: 
+            scale(0.25) translateY(12rem) translateX(5rem) 
+            rotateX(500deg) rotateZ(0deg) rotateY(216deg);
+        z-index: 1;
+    }
+    55%{
+        transform: 
+            scale(0.4) translateY(20rem) translateX(1rem) 
+            rotateX(0deg) rotateZ(0deg) rotateY(0deg);
+        z-index: 3;
+    }
+    /* 2nd impact */
+    62%{
+        transform: 
+            scale(0.4) translateY(16rem) translateX(0rem) 
+            rotateX(-500deg) rotateZ(0deg) rotateY(72deg);
+        z-index: 3;
+    }
+    64.9%{
+        transform: 
+            scale(0.43) translateY(21rem) translateX(0rem) 
+            rotateX(0deg) rotateZ(0deg) rotateY(144deg);
+        
+    }
+/*2nd downward rebound*/
+    65%{
+        transform: 
+            scale(0.43) translateY(21rem) translateX(0rem) 
+            rotateX(360deg) rotateZ(0deg) rotateY(144deg);
+    }
+    69.9%{
+        transform: 
+            scale(0.45) translateY(24rem) translateX(-2rem) 
+            rotateX(0deg) rotateZ(0deg) rotateY(216deg);
+    }
+    /*prepped for roll*/
+    70%{
+        transform: 
+            scale(0.45) translateY(22rem) translateX(-2rem) 
+            rotateX(0deg) rotateZ(0deg) rotateY(216deg);
+    }
+    /*begin roll*/
+    87.5%{
+        transform: 
+            scale(1) translateY(13.7rem) translateX(-6.5rem) 
+            rotateX(-1070deg) rotateZ(0deg) rotateY(0deg);
+    }
+    100%{
+        transform: 
+            scale(1) translateY(20rem) translateX(0rem) 
+            rotateX(-1225deg) rotateZ(710deg) rotateY(2deg);
+    }
+}
+
+@media only screen and (min-height: 520px) and (min-width: 550px){
+    .contain{
+        transform: 
+        scale(0.73);
+        background-size: 35%;
+    }
+    
+}
