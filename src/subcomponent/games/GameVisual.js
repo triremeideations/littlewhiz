@@ -1,18 +1,27 @@
-import './styles/alea.css'
+import { useEffect } from 'react';
+import './styles/alea.css';
+import alea from './throw_utils';
+
 
 const GameVisual=()=>{
+  
+  useEffect(()=>{
+    alea();
+  },[]);
+  
+  
   return (
     <div id='gamevisual'>
 
       <div className="gameframe">
             <div className='backboard'>
+              <div className='wall'></div>
+              <div className='wall'></div>
               <div className="dive">Die 1</div>
               <div className="dive">Die 2</div>
             </div>
 
             <div className="floorboard"> </div>
-            <div className="wall"> </div>
-            
             <div className="cube spin"> 
                 <img className="side one" alt='a die'
                     src="/img/game/die1.png"/>

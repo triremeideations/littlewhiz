@@ -2,7 +2,7 @@ import React from 'react'
 
 const NumQuest = () => {
   return (
-    <div class='questDiv'>NumQuest</div>
+    <div className='questDiv'>NumQuest</div>
   )
 }
 

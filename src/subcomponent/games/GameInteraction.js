@@ -5,6 +5,12 @@ import AbsQuest from './AbsQuest';
 
 const GameInteraction = ({ activeQuest, questSelect }) => {
 
+const throwOutcome=()=>{
+    const dieOne = sessionStorage.getItem('dieNumberOne');
+    const dieTwo = sessionStorage.getItem('dieNumberTwo');
+    console.log(`die one: ${dieOne}. die two: ${dieTwo}`);
+}
+
     return (
         <div id='gameinteraction'>
             <div id='questionBox'>
@@ -16,6 +22,7 @@ const GameInteraction = ({ activeQuest, questSelect }) => {
             <div id='buttonBox'>
                 <button id='thisVerbal' onClick={()=>{
                     questSelect(1)
+                    throwOutcome();
                 }}>
                     Verbal
                 </button>

@@ -49,6 +49,10 @@
 #questionBox,
 #buttonBox {
     background-color: transparent;
+}
+
+#questionBox,
+#buttonBox {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 2px solid gold;

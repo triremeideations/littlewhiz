@@ -11,7 +11,7 @@
         transform: scale(0.3);
     }
 }
-@media only screen and (max-width: 700px) and (max-height: 400px){
+@media only screen and (max-width: 950px) and (max-height: 400px){
     .gameframe{
         transform: scale(0.6);
     }
@@ -22,55 +22,38 @@
     height: 50%;
     margin: auto;
     background-color: rgb(200, 170, 120);
+    background: url('/public/img/wooden.jpg');
+
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    background-position-x: center;
 }
+.wall{
+    position: absolute;
+    top: 65%;
+    left: 106%;
+    width: 100%;
+    height: 50%;
+    background: url('/public/img/wooden.jpg');
+    /* background-color: rgb(200, 170, 120); */
+    transform: translateX(-50%) rotateY(80deg) skewY(20deg);
+}
+.wall:nth-of-type(2){
+    background-color: yellow;
+    left: -6%;
+    transform: translateX(-50%) rotateY(80deg) skewY(-20deg);
+}
+
 .floorboard{
     position: relative;
     top: -7%;
     width: 100%;
     height: 40%;
     background: rgb(200, 150, 100);
+    background: url('/public/img/wooden.jpg');
     transform: perspective(20px) rotateX(3deg);
 }
 
-@keyframes raiseWall {
-    10%{
-        opacity: 1;
-        top: 65%;
-    }
-    75%{
-        background: rgb(194, 150, 92);
-    }
-    80%{
-        background: yellowgreen;
-    }
-    100%{
-        width: 24%; 
-        height: 15%;
-        top: 56%;
-        left: 76%;
-        opacity: 1;
-        transform: skewY(68deg);
-        border-top-right-radius: 1rem;
-    }
-}
-
-.raiseWall{
-    animation: raiseWall 1.8s linear 0s 1 forwards normal;
-}
-
-
-.wall{
-    position: absolute;
-    width: 24%; height: 5%;
-    background-color: rgb(194, 150, 92);
-    top: 67%;
-    left: 76%;
-    transform: skewY(68deg);
-    border-top-right-radius: 1rem;
-    opacity: 0;
-}
 .dive{
     display: inline-block;
     position: relative;
@@ -82,11 +65,20 @@
     height: 2rem;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
-    background: rosybrown;
+    background: black;
+    border: 2px groove silver;
     color: white;
+    opacity: 0.2;
 
-    opacity: 0.5;
+    box-sizing: border-box;
+    padding: 2%;
 }
+.dive:nth-last-of-type(1){
+    border-radius: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
 .pitch, .res{
     position: absolute;
     top: 5%;
@@ -121,7 +113,6 @@
         scale(0.7) translateX(0rem) translateY(0rem)
         rotateX(60deg) rotateZ(20deg) rotateY(0deg);
     float: left;
-    
 }
 .cubeTwo{
     transform: 
@@ -166,16 +157,6 @@
 .throwTwo{
     animation: roll_b 4.9s linear 0s 1 forwards;
 }
-
-/*****************/
-/*test*/
-.cube{
-    animation: roll_a 4.5s linear 0s 1 forwards;
-}
-.cubeTwo {
-    animation: roll_b 4.9s linear 0s 1 forwards;
-}
-/*****************/
 
 .side{
     width: 100%;
@@ -260,37 +241,6 @@
             scale(0.33) translateY(17rem) translateX(-6rem)
             rotateX(180deg) rotateZ(510deg) rotateY(490deg);
     }
-
-/*alternate version if bounce is desired-->*/ 
-/*replace 50-65%*/
-
-/* 50%{
-        transform:
-            scale(0.3) translateY(9rem) translateX(-18rem)
-            rotateX(200deg) rotateZ(0deg) rotateY(0deg);
-    }
-    53%{
-        transform:
-            scale(0.29) translateY(7rem) translateX(-16rem)
-            rotateX(0deg) rotateZ(200deg) rotateY(0deg);
-    }
-    55%{
-        transform: 
-            scale(0.3) translateY(7rem) translateX(-12rem) 
-            rotateX(180deg) rotateZ(0deg) rotateY(0deg);
-    }
-    60%{
-        transform: 
-            scale(0.3) translateY(14rem) translateX(-7rem) 
-            rotateX(0deg) rotateZ(200deg) rotateY(0deg);
-    }
-    65%{
-        transform: 
-            scale(0.3) translateY(19rem) translateX(-5rem)
-            rotateX(-400deg) rotateZ(0deg) rotateY(0deg);
-    } */
-
-/*do not alter from 70% !!!*/
     70%{
         transform: 
             scale(0.4) translateY(18rem) translateX(-8rem)
@@ -419,11 +369,13 @@
     }
 }
 
-@media only screen and (min-height: 520px) and (min-width: 550px){
-    .contain{
-        transform: 
-        scale(0.73);
-        background-size: 35%;
-    }
-    
+
+/*****************/
+/*test*/
+/* .cube{
+    animation: roll_a 4.5s linear 0s 1 forwards;
 }
+.cubeTwo {
+    animation: roll_b 4.9s linear 0s 1 forwards;
+} */
+/*****************/
