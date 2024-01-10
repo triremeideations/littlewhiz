@@ -17,7 +17,9 @@ const BeginQuizzes = () => {
   const questSelect =(questId)=> {
     setActiveQuest(questId);
   }
-
+  useEffect(()=>{
+    questSelect(0);
+  },[]);
 
   return (
     <div id='questBackdrop'>

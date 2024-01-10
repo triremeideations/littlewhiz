@@ -105,3 +105,59 @@
     align-items: center;
     justify-content: center;
 }
+
+/************************/
+.questDiv {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+}
+.questNote{
+    background-color: black;
+    border: 5px ridge brown;
+    box-sizing: border-box;
+    padding: 5%;
+    line-height: 1.5;
+    font-family: eraser;
+    color: white;
+    font-size: 150%;
+}
+.questChoose {
+    display: grid;
+    gap: 2%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.questChoose div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.questChoose div button {
+    width: 70%;
+    height: 50%;
+    padding: 7%;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 120%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 749px){
+    .questNote{
+        font-size: 100%;
+    }
+    .questChoose div button {
+        font-size: 80%;
+    }
+
+}
+

@@ -372,10 +372,10 @@
 
 /*****************/
 /*test*/
-/* .cube{
-    animation: roll_a 4.5s linear 0s 1 forwards;
+.cube{
+display: none;
 }
 .cubeTwo {
-    animation: roll_b 4.9s linear 0s 1 forwards;
-} */
+    display: none;
+}
 /*****************/

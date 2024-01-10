@@ -2,6 +2,7 @@ import VerbalQuest from './VerbalQuest';
 import NumQuest from './NumQuest';
 import LogicQuest from './LogicQuest';
 import AbsQuest from './AbsQuest';
+import QuestInstruction from './QuestInstruction';
 
 const GameInteraction = ({ activeQuest, questSelect }) => {
 
@@ -14,6 +15,7 @@ const throwOutcome=()=>{
     return (
         <div id='gameinteraction'>
             <div id='questionBox'>
+                { activeQuest === 0 && <QuestInstruction/> }
                 { activeQuest === 1 && <VerbalQuest/> }
                 { activeQuest === 2 && <NumQuest/> }
                 { activeQuest === 3 && <LogicQuest/> }
