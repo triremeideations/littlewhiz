@@ -149,6 +149,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.5s ease;
+}
+.questChoose div button:hover {
+    background-color: greenyellow;
+    color: black;
 }
 
 @media only screen and (max-width: 749px){
@@ -158,6 +163,13 @@
     .questChoose div button {
         font-size: 80%;
     }
-
 }
 
+.instructDiv{
+    box-sizing: border-box;
+    padding: 5%;
+    color: white;
+}
+.answered {
+    background-color: blue;
+}

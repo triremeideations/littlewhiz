@@ -26,7 +26,7 @@ export function presentStart(){
 
 export function proceed(){
     /* C.f. selectionOutro subcomponent */
-    console.log('processing');
+    // console.log('processing');
     let qmenu = JSON.parse(sessionStorage.getItem('qmenu'));
     let diagx = document.querySelectorAll('.prepDiag')[0];
     let diagBtn = document.querySelectorAll('.initiateQuiz')[0];

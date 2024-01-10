@@ -365,7 +365,8 @@ function loginWithEmail(email){
 export function logoutLearner(){
     signOut(auth)
     .then(()=> {
-        console.log('learner successfully signed out')
+        alert('learner successfully signed out');
+        window.location.replace('/');
     })
     .catch((e)=>console.log(e));
 }

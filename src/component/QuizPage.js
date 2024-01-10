@@ -8,9 +8,9 @@ import GameInteraction from '../subcomponent/games/GameInteraction';
 const BeginQuizzes = () => {
   learnerLoginStatus();
     
-  // useEffect(()=>{
-  //     shouldRender('#sideA','#sideB');
-  // },[]);
+  useEffect(()=>{
+      shouldRender('#sideA','#sideB');
+  },[]);
 
   const [activeQuest, setActiveQuest] = useState(null);
   
